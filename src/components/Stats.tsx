@@ -19,7 +19,7 @@ const Stats = () => {
     },
     {
       icon: Award,
-      number: "15+",
+      number: "30+",
       text: "Anos de Experiência"
     },
     {

@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="inicio" className="pt-20 bg-gradient-to-br from-primary to-primary-light text-white">
+    <section id="inicio" className="pt-20 bg-gradient-to-br from-accent to-accent-light text-white">
       <div className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">

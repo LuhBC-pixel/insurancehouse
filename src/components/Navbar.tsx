@@ -14,7 +14,6 @@ const Navbar = () => {
               alt="Insurance House Logo" 
               className="h-12 w-auto"
             />
-            <span className="text-lg font-medium text-accent">Insurance House<br/>Corretora de Seguros</span>
           </div>
           
           {/* Desktop Menu */}

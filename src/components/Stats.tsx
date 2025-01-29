@@ -1,4 +1,4 @@
-import { Users, Award, Clock, PhoneCall } from 'lucide-react';
+import { Users, Award, Clock, PhoneCall, Handshake } from 'lucide-react';
 
 const StatCard = ({ icon: Icon, number, text }: { icon: any, number: string, text: string }) => (
   <div className="text-center">
@@ -23,9 +23,9 @@ const Stats = () => {
       text: "Anos de Experiência"
     },
     {
-      icon: Clock,
-      number: "24/7",
-      text: "Suporte Disponível"
+      icon: Handshake,
+      number: "20+",
+      text: "Parcerias com as seguradoras"
     },
     {
       icon: PhoneCall,

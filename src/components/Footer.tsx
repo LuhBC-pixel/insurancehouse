@@ -34,7 +34,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Horário de Atendimento</h4>
             <ul className="space-y-2 text-gray-300">
               <li>Segunda - Sexta</li>
-              <li>08:00 - 18:00</li>
+              <li>08:00 - 17:00</li>
               <li>Plantão 24h para</li>
               <li>emergências</li>
             </ul>
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2024 SeguroPlus. Todos os direitos reservados.</p>
+          <p>&copy; 2025 Insurance House Corretora de Seguros. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

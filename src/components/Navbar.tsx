@@ -22,7 +22,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
-            <a href="#services" className="text-text hover:text-accent transition-colors">Seguros</a>
+            <a href="#servicos" className="text-text hover:text-accent transition-colors">Seguros</a>
             <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
             <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
           </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-4">
               <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
-              <Link to="/seguros" className="text-text hover:text-accent transition-colors">Seguros</Link>
+              <a href="#servicos" className="text-text hover:text-accent transition-colors">Seguros</a>
               <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
               <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
               <button className="bg-accent text-white px-6 py-2 rounded-md hover:bg-accent-light transition-colors">

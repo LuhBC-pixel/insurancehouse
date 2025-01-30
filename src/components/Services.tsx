@@ -1,13 +1,16 @@
 import { Shield, Car, Home, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
-  <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-      <Icon className="text-primary" size={24} />
+const ServiceCard = ({ icon: Icon, title, description, link }: { icon: any, title: string, description: string, link: string }) => (
+  <Link to={link} className="block">
+    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+        <Icon className="text-primary" size={24} />
+      </div>
+      <h3 className="text-xl font-semibold mb-3 text-primary">{title}</h3>
+      <p className="text-text">{description}</p>
     </div>
-    <h3 className="text-xl font-semibold mb-3 text-primary">{title}</h3>
-    <p className="text-text">{description}</p>
-  </div>
+  </Link>
 );
 
 const Services = () => {
@@ -15,22 +18,26 @@ const Services = () => {
     {
       icon: Car,
       title: "Seguro Auto",
-      description: "Proteção completa para seu veículo com as melhores condições do mercado."
+      description: "Proteção completa para seu veículo com as melhores condições do mercado.",
+      link: "/seguros/auto"
     },
     {
       icon: Home,
       title: "Seguro Residencial",
-      description: "Segurança total para sua casa e seus bens mais preciosos."
+      description: "Segurança total para sua casa e seus bens mais preciosos.",
+      link: "/seguros/residencial"
     },
     {
       icon: Heart,
       title: "Seguro Vida",
-      description: "Tranquilidade para você e sua família quando mais precisar."
+      description: "Tranquilidade para você e sua família quando mais precisar.",
+      link: "/seguros/vida"
     },
     {
       icon: Shield,
       title: "Seguro Empresarial",
-      description: "Soluções personalizadas para proteger seu negócio e colaboradores."
+      description: "Soluções personalizadas para proteger seu negócio e colaboradores.",
+      link: "/seguros/empresarial"
     }
   ];
 

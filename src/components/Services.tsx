@@ -1,4 +1,4 @@
-import { Shield, Car, Home, Heart } from 'lucide-react';
+import { Shield, Car, Home, Heart, Plane, Smartphone } from 'lucide-react';
 
 const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
@@ -24,8 +24,18 @@ const Services = () => {
     },
     {
       icon: Heart,
-      title: "Seguro Vida",
+      title: "Seguro de Vida",
       description: "Tranquilidade para você e sua família quando mais precisar."
+    },
+    {
+      icon: Plane,
+      title: "Seguro Viagem",
+      description: "Conte com proteções para sua viagem nacional ou internacional"
+    },
+    {
+      icon: Smartphone,
+      title: "Seguro Celular",
+      description: "Proteção total para contra roubos, furtos e quebra acidental"
     },
     {
       icon: Shield,
@@ -38,7 +48,7 @@ const Services = () => {
     <section id="servicos" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Nossos Serviços</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Nossos Seguros</h2>
           <p className="text-text max-w-2xl mx-auto">
             Oferecemos uma ampla gama de seguros para atender todas as suas necessidades
           </p>

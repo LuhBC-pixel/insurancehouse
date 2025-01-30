@@ -22,7 +22,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
-            <Link to="/seguros" className="text-text hover:text-accent transition-colors">Seguros</Link>
+            <a href="#services" className="text-text hover:text-accent transition-colors">Seguros</a>
             <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
             <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
           </div>

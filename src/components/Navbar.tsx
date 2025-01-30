@@ -7,13 +7,14 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 flex items-center gap-2">
+        <div className="flex justify-between items-center h-24">
+          <div className="flex-shrink-0 flex items-center gap-3">
             <img 
               src="/lovable-uploads/47a318da-1c1d-4e96-a105-f40c10d4ee92.png" 
               alt="Insurance House Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
+            <span className="text-xl font-medium text-accent">Insurance House<br/>Corretora de Seguros</span>
           </div>
           
           {/* Desktop Menu */}

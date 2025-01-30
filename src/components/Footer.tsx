@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Insurance House<span className="text-secondary">Corretora de seguros</span></h3>
+            <h3 className="text-2xl font-bold mb-4">Insurance House<br/><span className="text-secondary">Corretora de Seguros</span></h3>
             <p className="text-gray-300">
               Sua segurança é nossa prioridade. Conte conosco para proteger o que é importante para você.
             </p>

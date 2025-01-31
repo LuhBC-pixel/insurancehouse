@@ -5,20 +5,10 @@ const SeguroVida = () => {
   return (
     <InsurancePage
       title="Seguro de Vida"
-      description="Garanta a proteção financeira de quem você ama. Nosso seguro de vida oferece tranquilidade para você e sua família nos momentos mais importantes."
-      features={[
-        "Cobertura 24 horas por dia",
-        "Proteção mundial",
-        "Assistência funeral",
-        "Invalidez por acidente",
-        "Capital segurado flexível"
-      ]}
-      coverageItems={[
-        "Morte natural e acidental",
-        "Invalidez permanente total ou parcial por acidente",
-        "Doenças graves",
-        "Assistência funeral familiar",
-        "Auxílio alimentação"
+      descriptions={[
+        "O seguro de vida vai muito além da cobertura de Morte, é um seguro para que você tenha proteção e auxílio em vida.",
+        "Além de deixar seus entes queridos protegidos, caso você venha a faltar.",
+        "Ajuda aliviar a pressão financeira e pode manter o estilo de vida da família."
       ]}
       icon={<Heart size={48} />}
     />

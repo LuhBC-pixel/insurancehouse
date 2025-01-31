@@ -5,20 +5,10 @@ const SeguroResidencial = () => {
   return (
     <InsurancePage
       title="Seguro Residencial"
-      description="Proteja seu lar e seus bens mais preciosos com nosso seguro residencial completo. Tenha tranquilidade sabendo que sua casa está protegida contra diversos tipos de imprevistos."
-      features={[
-        "Cobertura para estrutura e conteúdo",
-        "Assistência 24 horas",
-        "Serviços emergenciais",
-        "Proteção contra danos elétricos",
-        "Cobertura para roubo e furto"
-      ]}
-      coverageItems={[
-        "Incêndio, raio e explosão",
-        "Vendaval e granizo",
-        "Danos elétricos",
-        "Roubo e furto qualificado",
-        "Responsabilidade civil familiar"
+      descriptions={[
+        "A sua casa é o seu lugar seguro.",
+        "Para que você não precise se preocupar com eventos imprevistos que podem abalar a sua estrutura, mantenha o seu lar protegido com um seguro residencial contratado sob medida para você.",
+        "Seja indenizado em eventos como Incêndio, Vendaval, Danos Elétricos, Roubo, além de outras dezenas de coberturas ou acione serviços que facilitam o seu dia a dia, como, por exemplo, reparos hidráulicos."
       ]}
       icon={<Home size={48} />}
     />

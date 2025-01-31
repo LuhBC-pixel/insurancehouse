@@ -6,13 +6,11 @@ import Footer from './Footer';
 
 interface InsurancePageProps {
   title: string;
-  description: string;
-  features: string[];
-  coverageItems: string[];
+  descriptions: string[];
   icon: React.ReactNode;
 }
 
-const InsurancePage = ({ title, description, features, coverageItems, icon }: InsurancePageProps) => {
+const InsurancePage = ({ title, descriptions, icon }: InsurancePageProps) => {
   const { toast } = useToast();
 
   const handleContactClick = () => {
@@ -35,25 +33,10 @@ const InsurancePage = ({ title, description, features, coverageItems, icon }: In
               <h1 className="text-4xl font-bold text-primary">{title}</h1>
             </div>
             
-            <p className="text-lg text-text mb-8">{description}</p>
+            {descriptions.map((description, index) => (
+              <p key={index} className="text-lg text-text mb-8">{description}</p>
+            ))}
 
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-primary mb-4">Características</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                {features.map((feature, index) => (
-                  <li key={index} className="text-text">{feature}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold text-primary mb-4">Coberturas</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                {coverageItems.map((item, index) => (
-                  <li key={index} className="text-text">{item}</li>
-                ))}
-              </ul>
-            </div>
 
             <Button 
               onClick={handleContactClick}

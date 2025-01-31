@@ -5,20 +5,8 @@ const SeguroViagem = () => {
   return (
     <InsurancePage
       title="Seguro Viagem"
-      description="Viaje com tranquilidade sabendo que está protegido em qualquer lugar do mundo. Nosso seguro viagem oferece coberturas essenciais para suas viagens nacionais e internacionais."
-      features={[
-        "Cobertura internacional",
-        "Atendimento 24 horas em português",
-        "Telemedicina",
-        "Localização de bagagem",
-        "Cancelamento de viagem"
-      ]}
-      coverageItems={[
-        "Despesas médicas e hospitalares",
-        "Despesas odontológicas",
-        "Traslado médico",
-        "Perda ou extravio de bagagem",
-        "Cancelamento ou interrupção de viagem"
+      descriptions={[
+        "Conte com proteções para sua viagem nacional ou internacional e se preocupe apenas em curtir o passeio.",
       ]}
       icon={<Plane size={48} />}
     />

@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react';
+import { Mail, Shield } from 'lucide-react';
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 import Navbar from './Navbar';
@@ -9,9 +9,10 @@ interface InsurancePageProps {
   description: string;
   features: string[];
   coverageItems: string[];
+  icon: React.ReactNode;
 }
 
-const InsurancePage = ({ title, description, features, coverageItems }: InsurancePageProps) => {
+const InsurancePage = ({ title, description, features, coverageItems, icon }: InsurancePageProps) => {
   const { toast } = useToast();
 
   const handleContactClick = () => {
@@ -27,7 +28,13 @@ const InsurancePage = ({ title, description, features, coverageItems }: Insuranc
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-primary mb-6">{title}</h1>
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="text-primary text-4xl">
+                {icon}
+              </div>
+              <h1 className="text-4xl font-bold text-primary">{title}</h1>
+            </div>
+            
             <p className="text-lg text-text mb-8">{description}</p>
 
             <div className="mb-8">

@@ -1,4 +1,5 @@
 import InsurancePage from "@/components/InsurancePage";
+import { Home } from "lucide-react";
 
 const SeguroResidencial = () => {
   return (
@@ -19,6 +20,7 @@ const SeguroResidencial = () => {
         "Roubo e furto qualificado",
         "Responsabilidade civil familiar"
       ]}
+      icon={<Home size={48} />}
     />
   );
 };

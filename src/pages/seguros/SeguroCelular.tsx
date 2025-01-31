@@ -1,4 +1,5 @@
 import InsurancePage from "@/components/InsurancePage";
+import { Smartphone } from "lucide-react";
 
 const SeguroCelular = () => {
   return (
@@ -19,6 +20,7 @@ const SeguroCelular = () => {
         "Oxidação",
         "Defeitos após garantia"
       ]}
+      icon={<Smartphone size={48} />}
     />
   );
 };

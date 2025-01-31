@@ -1,4 +1,5 @@
 import InsurancePage from "@/components/InsurancePage";
+import { Heart } from "lucide-react";
 
 const SeguroVida = () => {
   return (
@@ -19,6 +20,7 @@ const SeguroVida = () => {
         "Assistência funeral familiar",
         "Auxílio alimentação"
       ]}
+      icon={<Heart size={48} />}
     />
   );
 };

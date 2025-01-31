@@ -1,4 +1,5 @@
 import InsurancePage from "@/components/InsurancePage";
+import { Car } from "lucide-react";
 
 const SeguroAuto = () => {
   return (
@@ -19,6 +20,7 @@ const SeguroAuto = () => {
         "Vidros, faróis e retrovisores",
         "Alagamento e enchente"
       ]}
+      icon={<Car size={48} />}
     />
   );
 };

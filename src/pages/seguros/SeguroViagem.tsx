@@ -1,4 +1,5 @@
 import InsurancePage from "@/components/InsurancePage";
+import { Plane } from "lucide-react";
 
 const SeguroViagem = () => {
   return (
@@ -19,6 +20,7 @@ const SeguroViagem = () => {
         "Perda ou extravio de bagagem",
         "Cancelamento ou interrupção de viagem"
       ]}
+      icon={<Plane size={48} />}
     />
   );
 };

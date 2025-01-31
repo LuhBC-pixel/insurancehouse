@@ -1,4 +1,5 @@
 import InsurancePage from "@/components/InsurancePage";
+import { Building2 } from "lucide-react";
 
 const SeguroEmpresarial = () => {
   return (
@@ -19,6 +20,7 @@ const SeguroEmpresarial = () => {
         "Vendaval e granizo",
         "Responsabilidade civil operações"
       ]}
+      icon={<Building2 size={48} />}
     />
   );
 };

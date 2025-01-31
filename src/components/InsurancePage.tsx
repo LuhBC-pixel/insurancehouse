@@ -1,4 +1,4 @@
-import { Mail, Shield } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 import Navbar from './Navbar';

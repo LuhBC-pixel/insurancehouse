@@ -4,8 +4,10 @@ import { Car } from "lucide-react";
 const SeguroAuto = () => {
   return (
     <InsurancePage
-      title="Seguro Auto"
-      description="Proteção completa para seu veículo com as melhores condições do mercado. Dirija com tranquilidade sabendo que você está protegido contra imprevistos."
+      title="Seguro Automóvel"
+      description="Cobertura total para o seu veículo e tranquilidade para você!
+      Coberturas e Assistências para as mais diversas situações.
+      Seja colisão, roubo, furto, acionar a assistência 24 horas, entre outros imprevistos, garanta a proteção ideal para você."
       features={[
         "Cobertura nacional",
         "Assistência 24 horas",

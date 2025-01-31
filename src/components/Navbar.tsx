@@ -37,8 +37,7 @@ const Navbar = () => {
             <div className="relative group">
               <button 
                 className="flex items-center text-text hover:text-accent transition-colors"
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 Seguros
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -49,8 +48,7 @@ const Navbar = () => {
                 className={`absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 ${
                   isDropdownOpen ? 'block' : 'hidden'
                 }`}
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 {segurosLinks.map((link) => (
                   <Link

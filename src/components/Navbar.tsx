@@ -1,9 +1,19 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const segurosLinks = [
+    { title: "Seguro Auto", href: "/seguros/auto" },
+    { title: "Seguro Residencial", href: "/seguros/residencial" },
+    { title: "Seguro de Vida", href: "/seguros/vida" },
+    { title: "Seguro Viagem", href: "/seguros/viagem" },
+    { title: "Seguro Celular", href: "/seguros/celular" },
+    { title: "Seguro Empresarial", href: "/seguros/empresarial" },
+  ];
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
@@ -22,7 +32,38 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
-            <a href="#servicos" className="text-text hover:text-accent transition-colors">Seguros</a>
+            
+            {/* Seguros Dropdown */}
+            <div className="relative group">
+              <button 
+                className="flex items-center text-text hover:text-accent transition-colors"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                Seguros
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div 
+                className={`absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 ${
+                  isDropdownOpen ? 'block' : 'hidden'
+                }`}
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                {segurosLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="block px-4 py-2 text-sm text-text hover:bg-background hover:text-accent transition-colors"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
             <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
           </div>
@@ -46,7 +87,21 @@ const Navbar = () => {
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-4">
               <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
-              <a href="#servicos" className="text-text hover:text-accent transition-colors">Seguros</a>
+              
+              {/* Mobile Seguros Links */}
+              <div className="flex flex-col space-y-2 pl-4">
+                <span className="text-text font-medium">Seguros:</span>
+                {segurosLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-text hover:text-accent transition-colors text-sm"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </div>
+
               <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
               <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
               <button className="bg-accent text-white px-6 py-2 rounded-md hover:bg-accent-light transition-colors">

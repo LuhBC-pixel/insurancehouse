@@ -9,7 +9,7 @@ import SeguroResidencial from "./pages/seguros/SeguroResidencial";
 import SeguroVida from "./pages/seguros/SeguroVida";
 import SeguroViagem from "./pages/seguros/SeguroViagem";
 import SeguroCelular from "./pages/seguros/SeguroCelular";
-import SeguroEmpresarial from "./pages/seguros/SeguroEmpresarial";
+import SeguroEmpresarial from "./pages/seguros/SeguroEmpresariais";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

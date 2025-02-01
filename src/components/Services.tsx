@@ -49,7 +49,7 @@ const Services = () => {
       icon: Shield,
       title: "Seguro Empresariais",
       description: "Soluções personalizadas para proteger seu negócio e colaboradores.",
-      href: "/seguros/empresarial"
+      href: "/seguros/empresariais"
     }
   ];
 

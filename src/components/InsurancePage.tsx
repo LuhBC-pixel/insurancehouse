@@ -1,4 +1,4 @@
-import { Mail, PhoneCall } from 'lucide-react';
+import { Mail, PhoneCall, FilePen } from 'lucide-react';
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 import Navbar from './Navbar';
@@ -30,8 +30,8 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons }: Insuran
 
   const defaultButtons: ButtonConfig[] = [
     {
-      icon: <Mail className="mr-2" />,
-      label: "Solicitar Contato",
+      icon: <FilePen className="mr-2" />,
+      label: "Solicite a sua cotação",
       action: handleContactClick
     }
   ];

@@ -11,6 +11,7 @@ const SeguroVida = () => {
         "Ajuda aliviar a pressão financeira e pode manter o estilo de vida da família."
       ]}
       icon={<Heart size={48} />}
+      imageSrc="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&h=800&fit=crop"
     />
   );
 };

@@ -8,9 +8,10 @@ interface InsurancePageProps {
   title: string;
   descriptions: string[];
   icon: React.ReactNode;
+  imageSrc?: string;
 }
 
-const InsurancePage = ({ title, descriptions, icon }: InsurancePageProps) => {
+const InsurancePage = ({ title, descriptions, icon, imageSrc }: InsurancePageProps) => {
   const { toast } = useToast();
 
   const handleContactClick = () => {
@@ -33,10 +34,19 @@ const InsurancePage = ({ title, descriptions, icon }: InsurancePageProps) => {
               <h1 className="text-4xl font-bold text-primary">{title}</h1>
             </div>
             
+            {imageSrc && (
+              <div className="mb-8 rounded-lg overflow-hidden shadow-xl">
+                <img 
+                  src={imageSrc} 
+                  alt={title}
+                  className="w-full h-[300px] object-cover"
+                />
+              </div>
+            )}
+
             {descriptions.map((description, index) => (
               <p key={index} className="text-lg text-text mb-8">{description}</p>
             ))}
-
 
             <Button 
               onClick={handleContactClick}

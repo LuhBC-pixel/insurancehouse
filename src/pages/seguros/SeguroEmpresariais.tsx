@@ -1,7 +1,7 @@
 import InsurancePage from "@/components/InsurancePage";
 import { Building2 } from "lucide-react";
 
-const SeguroEmpresarial = () => {
+const SeguroEmpresariais = () => {
   return (
     <InsurancePage
       title="Seguro Empresariais"
@@ -21,4 +21,4 @@ const SeguroEmpresarial = () => {
   );
 };
 
-export default SeguroEmpresarial;
+export default SeguroEmpresariais;

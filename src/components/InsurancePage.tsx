@@ -1,17 +1,24 @@
-import { Mail } from 'lucide-react';
+import { Mail, PhoneCall } from 'lucide-react';
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 import Navbar from './Navbar';
 import Footer from './Footer';
+
+interface ButtonConfig {
+  icon: React.ReactNode;
+  label: string;
+  action: () => void;
+}
 
 interface InsurancePageProps {
   title: string;
   descriptions: string[];
   icon: React.ReactNode;
   imageSrc?: string;
+  buttons?: ButtonConfig[];
 }
 
-const InsurancePage = ({ title, descriptions, icon, imageSrc }: InsurancePageProps) => {
+const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons }: InsurancePageProps) => {
   const { toast } = useToast();
 
   const handleContactClick = () => {
@@ -20,6 +27,16 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc }: InsurancePagePro
       description: "Em breve entraremos em contato com você!",
     });
   };
+
+  const defaultButtons: ButtonConfig[] = [
+    {
+      icon: <Mail className="mr-2" />,
+      label: "Solicitar Contato",
+      action: handleContactClick
+    }
+  ];
+
+  const displayButtons = buttons || defaultButtons;
 
   return (
     <div className="min-h-screen">
@@ -55,14 +72,17 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc }: InsurancePagePro
               ))}
             </div>
 
-            <div className="mt-8">
-              <Button 
-                onClick={handleContactClick}
-                className="w-full md:w-auto"
-              >
-                <Mail className="mr-2" />
-                Solicitar Contato
-              </Button>
+            <div className="mt-8 flex justify-center gap-4">
+              {displayButtons.slice(0, 2).map((button, index) => (
+                <Button 
+                  key={index}
+                  onClick={button.action}
+                  className="w-full md:w-auto"
+                >
+                  {button.icon}
+                  {button.label}
+                </Button>
+              ))}
             </div>
           </div>
         </div>

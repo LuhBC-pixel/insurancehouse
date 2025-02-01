@@ -24,10 +24,10 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc }: InsurancePagePro
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main className="pt-20 pb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-6">
               <div className="text-primary text-4xl">
                 {icon}
               </div>
@@ -35,7 +35,7 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc }: InsurancePagePro
             </div>
             
             {imageSrc && (
-              <div className="mb-12 rounded-lg overflow-hidden shadow-xl">
+              <div className="mb-8 rounded-lg overflow-hidden shadow-xl">
                 <img 
                   src={imageSrc} 
                   alt={title}
@@ -44,7 +44,7 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc }: InsurancePagePro
               </div>
             )}
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {descriptions.map((description, index) => (
                 <p 
                   key={index} 
@@ -55,7 +55,7 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc }: InsurancePagePro
               ))}
             </div>
 
-            <div className="mt-12">
+            <div className="mt-8">
               <Button 
                 onClick={handleContactClick}
                 className="w-full md:w-auto"

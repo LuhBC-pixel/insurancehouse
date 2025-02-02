@@ -1,6 +1,5 @@
 import InsurancePage from "@/components/InsurancePage";
 import { Car, FilePen } from "lucide-react";
-import { NavLink } from "react-router-dom";
 
 const SeguroAuto = () => {
   return (
@@ -14,10 +13,10 @@ const SeguroAuto = () => {
       icon={<Car size={48} />}
       imageSrc="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1200&h=800&fit=crop"
       buttons={[{
-        icon: "<FilePen classname='mr-2 />",
+        icon: <FilePen className="mr-2" />,
         label: "Solicite a sua cotação",
-        action: function (): string {
-          return 'https://insurancehouse.aggilizador.com.br/auto'
+        action: function (): void {
+          return window.location.assign('https://insurancehouse.aggilizador.com.br/auto')
         }
       }]}
     />

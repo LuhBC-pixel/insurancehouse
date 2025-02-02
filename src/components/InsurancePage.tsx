@@ -1,4 +1,4 @@
-import { Mail, PhoneCall, FilePen, Whatsapp } from 'lucide-react';
+import { Mail, PhoneCall, FilePen, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 import Navbar from './Navbar';
@@ -30,7 +30,7 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons }: Insuran
 
   const defaultButtons: ButtonConfig[] = [
     {
-      icon: <Whatsapp className="mr-2" />,
+      icon: <MessageCircle className="mr-2" />,
       label: "Entre em contato",
       action: () => window.open('https://api.whatsapp.com/send?phone=551938733736', '_blank')
     }

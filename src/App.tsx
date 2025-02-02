@@ -11,7 +11,7 @@ import SeguroViagem from "./pages/seguros/SeguroViagem";
 import SeguroCelular from "./pages/seguros/SeguroCelular";
 import SeguroEmpresariais from "./pages/seguros/SeguroEmpresariais";
 import SeguroFianca from "./pages/seguros/SeguroFianca";
-import SeguroCondominio from "./pages/seguros/SeguroCartao";
+import SeguroCartao from "./pages/seguros/SeguroCartao";
 import SeguroEquipamentos from "./pages/seguros/SeguroEquipamentos";
 import NotFound from "./pages/NotFound";
 
@@ -32,7 +32,7 @@ const App = () => (
           <Route path="/seguros/celular" element={<SeguroCelular />} />
           <Route path="/seguros/empresariais" element={<SeguroEmpresariais />} />
           <Route path="/seguros/fianca" element={<SeguroFianca />} />
-          <Route path="/seguros/condominio" element={<SeguroCondominio />} />
+          <Route path="/seguros/cartao" element={<SeguroCartao />} />
           <Route path="/seguros/equipamentos" element={<SeguroEquipamentos />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

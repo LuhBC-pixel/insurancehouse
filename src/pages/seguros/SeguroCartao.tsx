@@ -1,7 +1,7 @@
 import InsurancePage from "@/components/InsurancePage";
 import { CreditCard } from "lucide-react";
 
-const SeguroCondominio = () => {
+const SeguroCartao = () => {
   return (
     <InsurancePage
       title="Cartão de Crédito Porto Bank"
@@ -27,4 +27,4 @@ const SeguroCondominio = () => {
   );
 };
 
-export default SeguroCondominio;
+export default SeguroCartao;

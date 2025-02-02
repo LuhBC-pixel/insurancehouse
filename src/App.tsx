@@ -13,6 +13,7 @@ import SeguroEmpresariais from "./pages/seguros/SeguroEmpresariais";
 import SeguroFianca from "./pages/seguros/SeguroFianca";
 import SeguroCartao from "./pages/seguros/SeguroCartao";
 import SeguroEmprestimo from "./pages/seguros/SeguroEmprestimo";
+import SeguroSaude from "./pages/seguros/SeguroSaude";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/seguros/fianca" element={<SeguroFianca />} />
           <Route path="/seguros/cartao" element={<SeguroCartao />} />
           <Route path="/seguros/emprestimo" element={<SeguroEmprestimo />} />
+          <Route path="/seguros/saude" element={<SeguroSaude />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

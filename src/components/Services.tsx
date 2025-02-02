@@ -74,6 +74,12 @@ const Services = () => {
       title: "Seguro Emprestimo",
       description: "Proteção para seus emprestimos e financiamentos",
       href: "/seguros/emprestimo"
+    },
+    {
+      icon: Heart,
+      title: "Seguro Saúde",
+      description: "Proteção para sua saúde e de sua família",
+      href: "/seguros/saude"
     }
   ];
 

@@ -68,6 +68,12 @@ const Services = () => {
       title: "Seguro Equipamentos",
       description: "Proteção para seus equipamentos portáteis e eletrônicos.",
       href: "/seguros/equipamentos"
+    },
+    {
+      icon: Building,
+      title: "Seguro Emprestimo",
+      description: "Proteção para seus emprestimos e financiamentos",
+      href: "/seguros/emprestimo"
     }
   ];
 

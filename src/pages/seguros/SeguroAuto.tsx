@@ -16,7 +16,7 @@ const SeguroAuto = () => {
         icon: <FilePen className="mr-2" />,
         label: "Solicite a sua cotação",
         action: function (): void {
-          return window.location.assign('https://insurancehouse.aggilizador.com.br/auto')
+          return window.open('https://insurancehouse.aggilizador.com.br/auto', '_blank')
         }
       }]}
     />

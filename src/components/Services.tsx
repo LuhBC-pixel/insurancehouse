@@ -80,6 +80,12 @@ const Services = () => {
       title: "Seguro Saúde",
       description: "Proteção para sua saúde e de sua família",
       href: "/seguros/saude"
+    },
+    {
+      icon: Building2,
+      title: "Seguro Empresariais",
+      description: "Proteção para sua empresa",
+      href: "/seguros/equipamentos"
     }
   ];
 

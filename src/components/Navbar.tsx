@@ -17,7 +17,8 @@ const Navbar = () => {
     { title: "Seguro Fiança", href: "/seguros/fianca" },
     { title: "Seguro Cartão", href: "/seguros/cartao" },
     { title: "Seguro Empréstimo", href: "/seguros/emprestimo" },
-    { title: "Seguro Saúde", href: "/seguros/saude" }
+    { title: "Seguro Saúde", href: "/seguros/saude" },
+    { title: "Seguro Equipamentos", href: "/seguros/equipamentos" }
   ];
 
   return (

@@ -12,6 +12,19 @@ const SeguroVida = () => {
       ]}
       icon={<Heart size={48} />}
       imageSrc="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&h=800&fit=crop"
+      buttons={[{
+        label: "Solicite a sua cotação",
+        action: function (): void {
+          window.open('https://insurancehouse.aggilizador.com.br/', '_blank')
+        }
+      },
+      {
+        label: "Contrate o seu seguro Vida Porto",
+        action: function (): void {
+          window.open('https://www.portoseguro.com.br/seguro-de-vida/corretor', '_blank')
+        }
+      }
+    ]}
     />
   );
 };

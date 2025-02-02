@@ -1,5 +1,5 @@
 import InsurancePage from "@/components/InsurancePage";
-import { Building2, PhoneCall, MessageCircle } from "lucide-react";
+import { Building2, MessageCircle } from "lucide-react";
 
 const SeguroEmpresariais = () => {
   return (
@@ -29,7 +29,6 @@ const SeguroEmpresariais = () => {
           }
         },
         {
-          icon: <PhoneCall className="mr-2" />,
           label: "Contato por Telefone",
           action: function(): void {
             window.open('https://insurancehouse.aggilizador.com.br/business', '_blank')

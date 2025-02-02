@@ -12,6 +12,19 @@ const SeguroResidencial = () => {
       ]}
       icon={<Home size={48} />}
       imageSrc="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&h=800&fit=crop"
+      buttons={[{
+        label: 'Solicite a sua cotação',
+        action: function(): void {
+          window.open('https://insurancehouse.aggilizador.com.br/residence', '_blank')
+         }
+        },
+        {
+          label: 'Contrate o seu seguro Residencial Porto',
+          action: function(): void {
+            window.open('https://www.portoseguro.com.br/seguro-residencial?utm_source=redirect-vdo&utm_medium=nu&utm_campaign=seguro-residencial_na_redirect-vdo_na_aon_na_hq_growth_na&utm_content=na_visita_automatico_cross_redirect-vdo_na_na_nu_teste-nao_24qbr01949he&ref=redirect-vdo_24qbr01949he#vo-lgpd-frm-step-identify', '_blank')
+          }
+        }
+      ]}
     />
   );
 };

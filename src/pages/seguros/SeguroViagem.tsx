@@ -10,6 +10,12 @@ const SeguroViagem = () => {
       ]}
       icon={<Plane size={48} />}
       imageSrc="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&h=800&fit=crop"
+      buttons={[{
+        label: 'Simule e contrate agora',
+        action: function(): void {
+          window.open('https://www.portoseguro.com.br/seguro-de-vida', '_blank')
+        }
+      }]}
     />
   );
 };

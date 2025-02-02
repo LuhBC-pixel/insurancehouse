@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 interface ButtonConfig {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   label: string;
   action: () => void;
 }

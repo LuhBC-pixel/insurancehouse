@@ -18,13 +18,13 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-24">
+        <div className="flex justify-between items-center h-28">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/">
               <img 
                 src="/lovable-uploads/61910bfa-2da7-4781-a20b-d4620f3be4ab.png" 
                 alt="Insurance House Logo" 
-                className="h-20 w-auto"
+                className="h-24 w-auto" // Aumentei de h-20 para h-24
               />
             </Link>
           </div>

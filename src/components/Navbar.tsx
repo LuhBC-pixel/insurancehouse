@@ -16,7 +16,7 @@ const Navbar = () => {
     { title: "Seguro Empresariais", href: "/seguros/empresariais" },
     { title: "Seguro Fiança", href: "/seguros/fianca" },
     { title: "Seguro Cartão", href: "/seguros/cartao" },
-    { title: "Seguro Equipamentos", href: "/seguros/emprestimo" },
+    { title: "Seguro Empréstimo", href: "/seguros/emprestimo" },
   ];
 
   return (

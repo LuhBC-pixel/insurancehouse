@@ -13,12 +13,14 @@ const Navbar = () => {
     { title: "Seguro de Vida", href: "/seguros/vida" },
     { title: "Seguro Viagem", href: "/seguros/viagem" },
     { title: "Seguro Celular", href: "/seguros/celular" },
-    { title: "Seguro Empresariais", href: "/seguros/empresariais" },
     { title: "Seguro Fiança", href: "/seguros/fianca" },
     { title: "Seguro Cartão", href: "/seguros/cartao" },
     { title: "Seguro Empréstimo", href: "/seguros/emprestimo" },
+    { title: "Seguro Empresariais", href: "/seguros/empresariais" },
     { title: "Seguro Saúde", href: "/seguros/saude" },
-    { title: "Seguro Equipamentos", href: "/seguros/equipamentos" }
+    { title: "Seguro Equipamentos para mobilidade", href: "/seguros/equipamentos" },
+    { title: "Seguro Agronegócios", href: "/seguros/agronegocios" },
+    { title: "Seguro Produtos Diversos", href: "/seguros/produtos-diversos" }
   ];
 
   return (

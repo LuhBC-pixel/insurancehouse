@@ -1,4 +1,4 @@
-import { Car, Home, Heart, Plane, Smartphone, Building, Key, Laptop, Building2, CreditCard } from 'lucide-react';
+import { Car, Home, Heart, Plane, Smartphone, Building, Key, Building2, CreditCard, Leaf, Accessibility, Bike } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ icon: Icon, title, description, href }: { icon: any, title: string, description: string, href: string }) => (
@@ -46,12 +46,6 @@ const Services = () => {
       href: "/seguros/celular"
     },
     {
-      icon: Building2,
-      title: "Seguro Empresariais",
-      description: "Soluções personalizadas para proteger seu negócio e colaboradores.",
-      href: "/seguros/empresariais"
-    },
-    {
       icon: Key,
       title: "Seguro Fiança",
       description: "Garanta a tranquilidade na locação do seu imóvel.",
@@ -64,16 +58,16 @@ const Services = () => {
       href: "/seguros/cartao"
     },
     {
-      icon: Laptop,
-      title: "Seguro Equipamentos",
-      description: "Proteção para seus equipamentos portáteis e eletrônicos.",
-      href: "/seguros/equipamentos"
-    },
-    {
       icon: Building,
       title: "Seguro Emprestimo",
       description: "Proteção para seus emprestimos e financiamentos",
       href: "/seguros/emprestimo"
+    },
+    {
+      icon: Building2,
+      title: "Seguro Empresariais",
+      description: "Soluções personalizadas para proteger seu negócio e colaboradores.",
+      href: "/seguros/empresariais"
     },
     {
       icon: Heart,
@@ -82,10 +76,22 @@ const Services = () => {
       href: "/seguros/saude"
     },
     {
-      icon: Building2,
-      title: "Seguro Empresariais",
-      description: "Proteção para sua empresa",
+      icon: Accessibility,
+      title: "Seguro Equipamentos para mobilidade",
+      description: "Proteção para seus equipamentos portáteis e eletrônicos.",
       href: "/seguros/equipamentos"
+    },
+    {
+      icon: Leaf,
+      title: "Seguro Agronegócios",
+      description: "Proteção para seu agronegócio",
+      href: "/seguros/agronegocios"
+    },
+    {
+      icon: Bike,
+      title: "Seguro Produtos Diversos",
+      description: "Consórcio, Equipamentos Portáteis, Previdência Privada, Seguro Bike",
+      href: "/seguros/produtos-diversos"
     }
   ];
 

@@ -1,5 +1,6 @@
 import InsurancePage from "@/components/InsurancePage";
 import { Building2, MessageCircle } from "lucide-react";
+import { MdOutlineWhatsapp } from "react-icons/md";
 
 const SeguroEmpresariais = () => {
   return (
@@ -22,7 +23,7 @@ const SeguroEmpresariais = () => {
       imageSrc="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&h=800&fit=crop"
       buttons={[
         {
-          icon: <MessageCircle className="mr-2" />,
+          icon: <MdOutlineWhatsapp className="mr-2" />,
           label: "CONSULTE-NOS",
           action: function(): void {
             window.open('https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.', '_blank')

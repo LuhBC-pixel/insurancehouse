@@ -1,4 +1,4 @@
-import { Shield, Car, Home, Heart, Plane, Smartphone } from 'lucide-react';
+import { Shield, Car, Home, Heart, Plane, Smartphone, Building, Key, Laptop, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ icon: Icon, title, description, href }: { icon: any, title: string, description: string, href: string }) => (
@@ -46,10 +46,28 @@ const Services = () => {
       href: "/seguros/celular"
     },
     {
-      icon: Shield,
+      icon: Building2,
       title: "Seguro Empresariais",
       description: "Soluções personalizadas para proteger seu negócio e colaboradores.",
       href: "/seguros/empresariais"
+    },
+    {
+      icon: Key,
+      title: "Seguro Fiança",
+      description: "Garanta a tranquilidade na locação do seu imóvel.",
+      href: "/seguros/fianca"
+    },
+    {
+      icon: Building,
+      title: "Seguro Condomínio",
+      description: "Proteção completa para o seu condomínio e seus moradores.",
+      href: "/seguros/condominio"
+    },
+    {
+      icon: Laptop,
+      title: "Seguro Equipamentos",
+      description: "Proteção para seus equipamentos portáteis e eletrônicos.",
+      href: "/seguros/equipamentos"
     }
   ];
 

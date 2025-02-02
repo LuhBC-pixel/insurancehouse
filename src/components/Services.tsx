@@ -1,4 +1,4 @@
-import { Shield, Car, Home, Heart, Plane, Smartphone, Building, Key, Laptop, Building2 } from 'lucide-react';
+import { Car, Home, Heart, Plane, Smartphone, Building, Key, Laptop, Building2, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ icon: Icon, title, description, href }: { icon: any, title: string, description: string, href: string }) => (
@@ -58,10 +58,10 @@ const Services = () => {
       href: "/seguros/fianca"
     },
     {
-      icon: Building,
-      title: "Seguro Condomínio",
-      description: "Proteção completa para o seu condomínio e seus moradores.",
-      href: "/seguros/condominio"
+      icon: CreditCard,
+      title: "Seguro Cartão",
+      description: "Proteção para seu cartão de crédito com diversos benefícios.",
+      href: "/seguros/cartao"
     },
     {
       icon: Laptop,

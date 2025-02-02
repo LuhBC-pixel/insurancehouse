@@ -11,7 +11,7 @@ import SeguroViagem from "./pages/seguros/SeguroViagem";
 import SeguroCelular from "./pages/seguros/SeguroCelular";
 import SeguroEmpresariais from "./pages/seguros/SeguroEmpresariais";
 import SeguroFianca from "./pages/seguros/SeguroFianca";
-import SeguroCondominio from "./pages/seguros/SeguroCondominio";
+import SeguroCondominio from "./pages/seguros/SeguroCartao";
 import SeguroEquipamentos from "./pages/seguros/SeguroEquipamentos";
 import NotFound from "./pages/NotFound";
 

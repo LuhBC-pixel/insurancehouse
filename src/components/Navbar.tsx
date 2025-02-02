@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { title } from 'process';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,7 @@ const Navbar = () => {
     { title: "Seguro Celular", href: "/seguros/celular" },
     { title: "Seguro Empresariais", href: "/seguros/empresariais" },
     { title: "Seguro Fiança", href: "/seguros/fianca" },
+    { title: "Seguro Cartão", href: "/seguros/cartao" },
   ];
 
   return (

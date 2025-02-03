@@ -41,12 +41,15 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons }: Insuran
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="pt-40 pb-12"> {/* Aumentado o padding top de 20 para 40 */}
+      <main className="pt-40 pb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-primary text-4xl">
-                {icon}
+              <div className="text-primary flex items-center">
+                {React.cloneElement(icon as React.ReactElement, { 
+                  className: 'w-8 h-8',
+                  strokeWidth: 2
+                })}
               </div>
               <h1 className="text-4xl font-bold text-primary">{title}</h1>
             </div>

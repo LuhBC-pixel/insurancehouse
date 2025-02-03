@@ -27,17 +27,18 @@ const Contact = () => {
           <ContactCard
             icon={Phone}
             title="Telefone"
-            info="(11) 9999-9999"
+            info="(19) 3873-3736"
           />
           <ContactCard
             icon={Mail}
             title="E-mail"
-            info="contato@seguroplus.com"
+            info="contato@ihseguros.com.br"
           />
           <ContactCard
             icon={MapPin}
             title="Endereço"
-            info="Av. Principal, 123"
+            info="Rua Dom Barreto, 901, Centro
+Sumaré - SP 13170-004, BR"
           />
         </div>
       </div>

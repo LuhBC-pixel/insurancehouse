@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { MdOutlineWhatsapp } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import { title } from 'process';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,8 +75,9 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex">
-            <button className="bg-accent text-white px-6 py-2 rounded-md hover:bg-accent-light transition-colors">
-              Cotação Online
+            <button className="bg-accent text-white px-6 py-2 rounded-md hover:bg-accent-light transition-colors" onClick={() => window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank")}>
+              <MdOutlineWhatsapp size={24} className="mr-2" />
+              Fale Conosco
             </button>
           </div>
 

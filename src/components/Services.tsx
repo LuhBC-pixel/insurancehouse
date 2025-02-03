@@ -1,19 +1,22 @@
+import { useState } from 'react';
 import { Car, Home, Heart, Plane, Smartphone, Building, Key, Building2, CreditCard, Leaf, Accessibility, Bike } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ icon: Icon, title, description, href }: { icon: any, title: string, description: string, href: string }) => (
-  <Link to={href} className="block">
-    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-        <Icon className="text-primary" size={24} />
+  <Link to={href} className="block transform transition-all duration-300 hover:scale-105">
+    <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+        <Icon className="text-primary" size={32} />
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-primary">{title}</h3>
-      <p className="text-text">{description}</p>
+      <h3 className="text-2xl font-semibold mb-4 text-primary">{title}</h3>
+      <p className="text-gray-600 leading-relaxed">{description}</p>
     </div>
   </Link>
 );
 
 const Services = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const services = [
     {
       icon: Car,
@@ -95,20 +98,32 @@ const Services = () => {
     }
   ];
 
+  const visibleServices = showAll ? services : services.slice(0, 4);
+
   return (
     <section id="servicos" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Nossos Seguros</h2>
-          <p className="text-text max-w-2xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Nossos Seguros</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Oferecemos uma ampla gama de seguros para atender todas as suas necessidades
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {visibleServices.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
         </div>
+        {!showAll && services.length > 4 && (
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setShowAll(true)}
+              className="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Ver mais seguros
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

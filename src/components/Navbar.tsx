@@ -32,7 +32,7 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/61910bfa-2da7-4781-a20b-d4620f3be4ab.png" 
                 alt="Insurance House Logo" 
-                className="h-24 w-auto" // Aumentei de h-20 para h-24
+                className="h-24 w-auto"
               />
             </Link>
           </div>
@@ -75,8 +75,11 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex">
-            <button className="bg-accent text-white px-6 py-2 rounded-md hover:bg-accent-light transition-colors" onClick={() => window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank")}>
-              <MdOutlineWhatsapp size={24} className="mr-2" />
+            <button 
+              className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5" 
+              onClick={() => window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank")}
+            >
+              <MdOutlineWhatsapp size={24} className="text-white" />
               Fale Conosco
             </button>
           </div>
@@ -111,8 +114,12 @@ const Navbar = () => {
 
               <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
               <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
-              <button className="bg-accent text-white px-6 py-2 rounded-md hover:bg-accent-light transition-colors">
-                Cotação Online
+              <button 
+                className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg"
+                onClick={() => window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank")}
+              >
+                <MdOutlineWhatsapp size={24} className="text-white" />
+                Fale Conosco
               </button>
             </div>
           </div>

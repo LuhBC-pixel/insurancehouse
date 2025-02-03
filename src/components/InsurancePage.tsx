@@ -41,7 +41,7 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons }: Insuran
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="pt-20 pb-12">
+      <main className="pt-40 pb-12"> {/* Aumentado o padding top de 20 para 40 */}
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-4 mb-6">

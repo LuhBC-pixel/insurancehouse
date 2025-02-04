@@ -1,13 +1,17 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-const ContactCard = ({ icon: Icon, title, info }: { icon: any, title: string, info: string }) => (
-  <div className="flex items-center gap-4 p-6 bg-white rounded-lg shadow-md">
+const ContactCard = ({ icon: Icon, title, info }: { icon: any, title: string, info: string | React.ReactNode }) => (
+  <div className="flex items-center gap-4 p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
       <Icon className="text-primary" size={24} />
     </div>
     <div>
       <h3 className="font-semibold text-primary">{title}</h3>
-      <p className="text-text">{info}</p>
+      {typeof info === 'string' ? (
+        <p className="text-text">{info}</p>
+      ) : (
+        info
+      )}
     </div>
   </div>
 );
@@ -37,8 +41,14 @@ const Contact = () => {
           <ContactCard
             icon={MapPin}
             title="Endereço"
-            info="Rua Dom Barreto, 901, Centro
-Sumaré - SP 13170-004, BR"
+            info={
+              <div className="flex flex-col">
+                <span>Rua Dom Barreto, 901</span>
+                <span>Centro</span>
+                <span>Sumaré - SP</span>
+                <span>13170-004</span>
+              </div>
+            }
           />
         </div>
       </div>

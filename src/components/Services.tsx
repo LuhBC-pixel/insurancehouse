@@ -3,13 +3,13 @@ import { Car, Home, Heart, Plane, Smartphone, Building, Key, Building2, CreditCa
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ icon: Icon, title, description, href }: { icon: any, title: string, description: string, href: string }) => (
-  <Link to={href} className="block transform transition-all duration-300 hover:scale-105">
-    <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+  <Link to={href} className="block transform transition-all duration-300 hover:scale-105 h-full">
+    <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 h-full flex flex-col">
       <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
         <Icon className="text-primary" size={32} />
       </div>
-      <h3 className="text-2xl font-semibold mb-4 text-primary">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <h3 className="text-2xl font-semibold mb-4 text-primary text-center">{title}</h3>
+      <p className="text-gray-600 leading-relaxed text-center flex-grow">{description}</p>
     </div>
   </Link>
 );
@@ -114,13 +114,13 @@ const Services = () => {
             <ServiceCard key={index} {...service} />
           ))}
         </div>
-        {!showAll && services.length > 4 && (
+        {services.length > 4 && (
           <div className="text-center mt-12">
             <button
-              onClick={() => setShowAll(true)}
+              onClick={() => setShowAll(!showAll)}
               className="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Ver mais seguros
+              {showAll ? 'Ver menos seguros' : 'Ver mais seguros'}
             </button>
           </div>
         )}

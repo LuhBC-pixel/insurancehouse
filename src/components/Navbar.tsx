@@ -70,6 +70,8 @@ const Navbar = () => {
               </div>
             </div>
 
+            <Link to="/sinistro" className="text-text hover:text-accent transition-colors">Sinistro</Link>
+            <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors">Assistência 24h</Link>
             <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
             <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
           </div>
@@ -112,6 +114,8 @@ const Navbar = () => {
                 ))}
               </div>
 
+              <Link to="/sinistro" className="text-text hover:text-accent transition-colors">Sinistro</Link>
+              <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors">Assistência 24h</Link>
               <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
               <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
               <button 

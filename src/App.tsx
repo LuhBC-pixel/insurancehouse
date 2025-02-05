@@ -15,7 +15,7 @@ import SeguroCartao from "./pages/seguros/SeguroCartao";
 import SeguroEmprestimo from "./pages/seguros/SeguroEmprestimo";
 import SeguroSaude from "./pages/seguros/SeguroSaude";
 import SeguroEquipamentos from "./pages/seguros/SeguroEquipamentos";
-import SeguroAgronegocios from "./pages/SeguroAgronegocios";
+import SeguroAgronegocios from "./pages/seguros/SeguroAgronegocios";
 import SeguroProdutosDiversos from "./pages/seguros/SeguroProdutosDIversos";
 import Sinistro from "./pages/Sinistro";
 import Assistencia24h from "./pages/Assistencia24h";

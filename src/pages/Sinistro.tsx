@@ -4,19 +4,20 @@ import InsurancePage from "@/components/InsurancePage";
 const Sinistro = () => {
   return (
     <InsurancePage
-      title="Sinistro"
+      title="Sinistros"
       descriptions={[
-        "Em momentos difíceis, estamos aqui para ajudar. Nossa equipe especializada em sinistros está pronta para guiá-lo através de todo o processo de forma rápida e eficiente.",
-        "Oferecemos um processo simplificado de comunicação de sinistro, com atendimento 24 horas por dia, 7 dias por semana, garantindo que você receba o suporte necessário quando mais precisar.",
-        "Entre em contato conosco imediatamente após a ocorrência do sinistro para iniciarmos o processo de atendimento e resolução do seu caso."
+        "Estes são os documentos iniciais para comunicar um sinistro, documentos complementares poderão ser solicitados no decorrer da análise.",
       ]}
       icon={<Shield />}
       imageSrc="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
       buttons={[
         {
-          icon: <Phone className="mr-2" />,
-          label: "Comunicar Sinistro",
-          action: () => window.open('tel:+551938733736')
+          label: "Registrar B.O online",
+          action: () => window.open('https://www.delegaciaeletronica.policiacivil.sp.gov.br/ssp-de-cidadao/pages/comunicar-ocorrencia', '_blank'),
+        },
+        {
+          label: "Consulta FIPE",
+          action: () => window.open('https://veiculos.fipe.org.br/#carro', '_blank'),
         }
       ]}
     />

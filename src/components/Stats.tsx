@@ -1,20 +1,55 @@
 import { Users, Award, Clock, PhoneCall, Handshake } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
-const StatCard = ({ icon: Icon, number, text }: { icon: any, number: string, text: string }) => (
-  <div className="text-center animate-fade-in animate-slide-in">
-    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-transform duration-300">
-      <Icon className="text-primary" size={32} />
+const CountUpAnimation = ({ end, duration = 2000 }: { end: number, duration?: number }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = (currentTime - startTime) / duration;
+
+      if (progress < 1) {
+        setCount(Math.min(Math.floor(end * progress), end));
+        animationFrame = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [end, duration]);
+
+  return <>{count}</>;
+};
+
+const StatCard = ({ icon: Icon, number, text }: { icon: any, number: string, text: string }) => {
+  const numericValue = parseInt(number.replace(/[^0-9]/g, ''));
+  const suffix = number.replace(/[0-9]/g, '');
+
+  return (
+    <div className="text-center animate-fade-in animate-slide-in">
+      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-transform duration-300">
+        <Icon className="text-primary" size={32} />
+      </div>
+      <h3 className="text-3xl font-bold text-primary mb-2">
+        <CountUpAnimation end={numericValue} />
+        {suffix}
+      </h3>
+      <p className="text-text">{text}</p>
     </div>
-    <h3 className="text-3xl font-bold text-primary mb-2">{number}</h3>
-    <p className="text-text">{text}</p>
-  </div>
-);
+  );
+};
 
 const Stats = () => {
   const stats = [
     {
       icon: Users,
-      number: "10k+",
+      number: "10000+",
       text: "Clientes Satisfeitos"
     },
     {
@@ -29,7 +64,7 @@ const Stats = () => {
     },
     {
       icon: PhoneCall,
-      number: "98%",
+      number: "98+",
       text: "Taxa de Resolução"
     }
   ];

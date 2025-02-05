@@ -13,20 +13,20 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Seguros</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-secondary transition-colors">Auto</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Residencial</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Vida</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Empresarial</a></li>
+              <li><a href="/seguros/auto" className="hover:text-secondary transition-colors">Auto</a></li>
+              <li><a href="/seguros/residencial" className="hover:text-secondary transition-colors">Residencial</a></li>
+              <li><a href="/seguros/vida" className="hover:text-secondary transition-colors">Vida</a></li>
+              <li><a href="/seguros/empresarial" className="hover:text-secondary transition-colors">Empresarial</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Links Úteis</h4>
+            <h4 className="font-semibold mb-4">Serviços</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-secondary transition-colors">Sobre Nós</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Contato</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">FAQ</a></li>
+              <li><a href="/sinistro" className="hover:text-secondary transition-colors">Sinistro</a></li>
+              <li><a href="/assistencia-24h" className="hover:text-secondary transition-colors">Assistência 24h</a></li>
+              <li><a href="#sobre" className="hover:text-secondary transition-colors">Sobre Nós</a></li>
+              <li><a href="#contato" className="hover:text-secondary transition-colors">Contato</a></li>
             </ul>
           </div>
           

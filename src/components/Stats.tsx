@@ -1,10 +1,12 @@
 import { Users, Award, Clock, PhoneCall, Handshake } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-const CountUpAnimation = ({ end, duration = 2000 }: { end: number, duration?: number }) => {
+const CountUpAnimation = ({ end, duration = 2000, shouldAnimate }: { end: number, duration?: number, shouldAnimate: boolean }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+    if (!shouldAnimate) return;
+    
     let startTime: number;
     let animationFrame: number;
 
@@ -22,12 +24,12 @@ const CountUpAnimation = ({ end, duration = 2000 }: { end: number, duration?: nu
 
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
-  }, [end, duration]);
+  }, [end, duration, shouldAnimate]);
 
-  return <>{count}</>;
+  return <>{shouldAnimate ? count : 0}</>;
 };
 
-const StatCard = ({ icon: Icon, number, text }: { icon: any, number: string, text: string }) => {
+const StatCard = ({ icon: Icon, number, text, isVisible }: { icon: any, number: string, text: string, isVisible: boolean }) => {
   const numericValue = parseInt(number.replace(/[^0-9]/g, ''));
   const suffix = number.replace(/[0-9]/g, '');
 
@@ -37,7 +39,7 @@ const StatCard = ({ icon: Icon, number, text }: { icon: any, number: string, tex
         <Icon className="text-primary" size={32} />
       </div>
       <h3 className="text-3xl font-bold text-primary mb-2">
-        <CountUpAnimation end={numericValue} />
+        <CountUpAnimation end={numericValue} shouldAnimate={isVisible} />
         {suffix}
       </h3>
       <p className="text-text">{text}</p>
@@ -46,6 +48,29 @@ const StatCard = ({ icon: Icon, number, text }: { icon: any, number: string, tex
 };
 
 const Stats = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const stats = [
     {
       icon: Users,
@@ -70,13 +95,13 @@ const Stats = () => {
   ];
 
   return (
-    <section id="sobre" className="py-20 bg-white">
+    <section id="sobre" className="py-20 bg-white" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-primary mb-3 animate-fade-in">Nossa Experiência em Números</h2>
         <p className="text-center text-gray-600 mb-12 text-lg animate-fade-in">Conheça nosso histórico de excelência e compromisso</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {stats.map((stat, index) => (
-            <StatCard key={index} {...stat} />
+            <StatCard key={index} {...stat} isVisible={isVisible} />
           ))}
         </div>
       </div>

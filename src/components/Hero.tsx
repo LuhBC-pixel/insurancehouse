@@ -18,7 +18,11 @@ const Hero = () => {
             </button>
           </div>
           <div className="animate-slide-in hidden md:block">
-            <img src="/placeholder.svg" alt="Segurança" className="w-full max-w-lg mx-auto" />
+            <img 
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&h=800&fit=crop" 
+              alt="Segurança e Proteção" 
+              className="w-full max-w-lg mx-auto rounded-lg shadow-xl"
+            />
           </div>
         </div>
       </div>

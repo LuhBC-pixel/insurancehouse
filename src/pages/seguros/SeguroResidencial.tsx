@@ -11,7 +11,7 @@ const SeguroResidencial = () => {
         "Seja indenizado em eventos como Incêndio, Vendaval, Danos Elétricos, Roubo, além de outras dezenas de coberturas ou acione serviços que facilitam o seu dia a dia, como, por exemplo, reparos hidráulicos."
       ]}
       icon={<Home size={48} />}
-      imageSrc="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&h=800&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&h=800&fit=crop"
       buttons={[{
         label: 'Solicite a sua cotação',
         action: function(): void {

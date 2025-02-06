@@ -20,7 +20,7 @@ const SeguroEmpresariais = () => {
         "Além dos seguros desenhados sob medida para atender as suas operações."
       ]}
       icon={<Building2 size={48} />}
-      imageSrc="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&h=800&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&h=800&fit=crop"
       buttons={[
         {
           icon: <MdOutlineWhatsapp className="mr-2" />,

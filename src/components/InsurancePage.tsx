@@ -17,9 +17,10 @@ interface InsurancePageProps {
   icon: React.ReactNode;
   imageSrc?: string;
   buttons?: ButtonConfig[];
+  children?: React.ReactNode; // Added this line to accept children
 }
 
-const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons }: InsurancePageProps) => {
+const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons, children }: InsurancePageProps) => {
   const { toast } = useToast();
 
   const handleContactClick = () => {
@@ -100,6 +101,8 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons }: Insuran
                 </Button>
               ))}
             </div>
+
+            {children} {/* Added this line to render children */}
           </div>
         </div>
       </main>

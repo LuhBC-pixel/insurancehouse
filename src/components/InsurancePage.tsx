@@ -5,6 +5,7 @@ import Footer from './Footer';
 import InsuranceHeader from './insurance/InsuranceHeader';
 import InsuranceDescription from './insurance/InsuranceDescription';
 import InsuranceActions from './insurance/InsuranceActions';
+import { Json } from '@/integrations/supabase/types';
 
 interface ButtonConfig {
   icon?: React.ReactNode;
@@ -14,7 +15,7 @@ interface ButtonConfig {
 
 interface InsurancePageProps {
   title: string;
-  descriptions: string[];
+  descriptions: Json[];
   icon: React.ReactNode;
   imageSrc?: string;
   buttons?: ButtonConfig[];

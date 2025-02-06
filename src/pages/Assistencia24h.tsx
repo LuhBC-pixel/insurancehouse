@@ -1,15 +1,16 @@
-import { HelpCircle, Phone } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 import InsurancePage from "@/components/InsurancePage";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { MdOutlineWhatsapp } from "react-icons/md";
 
 const insuranceCompanies = [
   {
-    name: "Porto Seguro",
-    description: "0800 727 2766 - Assistência 24h para segurados e 3366-3110 para segurados Porto Seguro Auto.",
+    name: "Aliro Seguros",
+    description: "Assistência 24h 0800 770 1318 Todas as regiões",
   },
   {
-    name: "Bradesco Seguros",
-    description: "4004-2757 (Capitais e regiões metropolitanas) e 0800 701 2757 (Demais localidades) - Atendimento 24 horas.",
+    name: "ALLIANZ SEGUROS",
+    description: "WhatsApp 11 4090 1444 e 11 4090 1110 AUTOMÓVEL 0800 0130 700 RESIDÊNCIA E EMPRESA 0800 0177 178",
   },
   {
     name: "SulAmérica",
@@ -62,17 +63,17 @@ const Assistencia24h = () => {
     <InsurancePage
       title="Assistência 24H"
       descriptions={[
-        "Nossa assistência 24 horas está sempre disponível para atender você em qualquer situação de emergência, oferecendo suporte completo e imediato.",
-        "Contamos com uma ampla rede de prestadores qualificados em todo o território nacional, garantindo atendimento rápido e eficiente onde quer que você esteja.",
-        "Serviços incluem: socorro mecânico, guincho, chaveiro, troca de pneus, taxi, hospedagem e muito mais."
+        "Caso o seu veículo esteja impossibilitado de rodar, acione a assistência do seu seguro, tenha em mãos:",
+        "- Endereço do local da pane",
+        "- Endereço de destino do veículo"
       ]}
       icon={<HelpCircle />}
       imageSrc="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9"
       buttons={[
         {
-          icon: <Phone className="mr-2" />,
-          label: "Solicitar Assistência",
-          action: () => window.open('tel:+551938733736')
+          icon: <MdOutlineWhatsapp className="mr-2" />,
+          label: "Contato departamento de sinistros/assistências",
+          action: () => window.open('https://api.whatsapp.com/send/?phone=5519998805205&text&type=phone_number&app_absent=0', '_blank'),
         }
       ]}
     >

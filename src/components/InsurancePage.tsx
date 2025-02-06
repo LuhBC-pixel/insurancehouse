@@ -1,9 +1,10 @@
 import React from 'react';
-import { MessageSquare } from 'lucide-react';
-import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import InsuranceHeader from './insurance/InsuranceHeader';
+import InsuranceDescription from './insurance/InsuranceDescription';
+import InsuranceActions from './insurance/InsuranceActions';
 
 interface ButtonConfig {
   icon?: React.ReactNode;
@@ -17,43 +18,18 @@ interface InsurancePageProps {
   icon: React.ReactNode;
   imageSrc?: string;
   buttons?: ButtonConfig[];
-  children?: React.ReactNode; // Added this line to accept children
+  children?: React.ReactNode;
 }
 
-const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons, children }: InsurancePageProps) => {
+const InsurancePage = ({ 
+  title, 
+  descriptions, 
+  icon, 
+  imageSrc, 
+  buttons,
+  children 
+}: InsurancePageProps) => {
   const { toast } = useToast();
-
-  const handleContactClick = () => {
-    toast({
-      title: "Contato",
-      description: "Em breve entraremos em contato com você!",
-    });
-  };
-
-  const defaultButtons: ButtonConfig[] = [
-    {
-      icon: <MessageSquare className="mr-2" />,
-      label: "Entre em contato",
-      action: () => window.open('https://api.whatsapp.com/send?phone=551938733736', '_blank')
-    }
-  ];
-
-  const displayButtons = buttons || defaultButtons;
-
-  const renderDescription = (text: string) => {
-    if (text === "FINANCIAMENTO" || 
-        text === "EMPRÉSTIMO COM GARANTIA DE VEÍCULO" || 
-        text === "EMPRÉSTIMO COM GARANTIA DE IMÓVEL") {
-      return (
-        <h2 className="text-xl font-bold text-primary mt-6 mb-4">{text}</h2>
-      );
-    }
-    return (
-      <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
-        {text}
-      </p>
-    );
-  };
 
   return (
     <div className="min-h-screen">
@@ -61,15 +37,7 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons, children 
       <main className="pt-40 pb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-primary flex items-center">
-                {React.cloneElement(icon as React.ReactElement, { 
-                  className: 'w-8 h-8',
-                  strokeWidth: 2
-                })}
-              </div>
-              <h1 className="text-4xl font-bold text-primary">{title}</h1>
-            </div>
+            <InsuranceHeader title={title} icon={icon} />
             
             {imageSrc && (
               <div className="mb-8 rounded-lg overflow-hidden shadow-xl">
@@ -81,28 +49,9 @@ const InsurancePage = ({ title, descriptions, icon, imageSrc, buttons, children 
               </div>
             )}
 
-            <div className="space-y-4">
-              {descriptions.map((description, index) => (
-                <div key={index}>
-                  {renderDescription(description)}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex justify-center gap-4">
-              {displayButtons.slice(0, 2).map((button, index) => (
-                <Button 
-                  key={index}
-                  onClick={button.action}
-                  className="w-full md:w-auto"
-                >
-                  {button.icon}
-                  {button.label}
-                </Button>
-              ))}
-            </div>
-
-            {children} {/* Added this line to render children */}
+            <InsuranceDescription descriptions={descriptions} />
+            <InsuranceActions buttons={buttons} />
+            {children}
           </div>
         </div>
       </main>

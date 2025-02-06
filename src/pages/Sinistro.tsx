@@ -1,4 +1,4 @@
-import { Shield, FileText, Phone, Car, Home } from "lucide-react";
+import { Shield, Phone } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import InsurancePage from "@/components/InsurancePage";
+import { MdOutlineWhatsapp } from "react-icons/md";
 
 const Sinistro = () => {
   return (
@@ -19,24 +20,21 @@ const Sinistro = () => {
       imageSrc="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
       buttons={[
         {
-          icon: <FileText className="mr-2" />,
           label: "Registrar B.O online",
           action: () => window.open('https://www.delegaciaeletronica.policiacivil.sp.gov.br/ssp-de-cidadao/pages/comunicar-ocorrencia', '_blank'),
         },
         {
-          icon: <Car className="mr-2" />,
           label: "Consulta FIPE",
           action: () => window.open('https://veiculos.fipe.org.br/#carro', '_blank'),
         },
         {
-          icon: <Home className="mr-2" />,
-          label: "Assistência 24h",
-          action: () => window.open('/assistencia-24h', '_blank'),
+          label: "Comunicação de sinistro automóvel",
+          action: () => window.open('https://forms.gle/Kt4moViXJQVTtWFx7', '_blank'),
         },
         {
-          icon: <Phone className="mr-2" />,
-          label: "Fale Conosco",
-          action: () => window.open('https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20um%20sinistro.', '_blank'),
+          icon: <MdOutlineWhatsapp className="mr-2" />,
+          label: "Contato departamento de sinistros/assistência",
+          action: () => window.open('https://api.whatsapp.com/send/?phone=5519998805205&text&type=phone_number&app_absent=0', '_blank'),
         }
       ]}
     >
@@ -44,28 +42,45 @@ const Sinistro = () => {
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-left">
-              Como faço para acionar o seguro em caso de sinistro?
+              Para Avisar um sinistro de Colisão sem vítima
             </AccordionTrigger>
             <AccordionContent>
-              Em caso de sinistro, você deve entrar em contato imediatamente com a seguradora através dos canais de atendimento disponíveis 24 horas. Tenha em mãos seus documentos pessoais, apólice do seguro e, se possível, registre um Boletim de Ocorrência. Nossa equipe irá orientá-lo sobre os próximos passos e documentos necessários.
+            • Boletim de ocorrência <br />
+            • Cópia do DUT (Documento único de transferência CRV) frente e verso <br />
+            • Cópia da CNH do condutor no momento da colisão frente e verso <br />
+            •Formulário de Aviso de sinistro assinado
             </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="item-2">
             <AccordionTrigger className="text-left">
-              Qual é o prazo para comunicar um sinistro?
+              Para Avisar um sinistro de Colisão com vítima
             </AccordionTrigger>
             <AccordionContent>
-              O sinistro deve ser comunicado o quanto antes possível. Embora cada seguradora tenha seus prazos específicos, recomendamos que a comunicação seja feita em até 24 horas após o ocorrido para agilizar o processo e garantir todos os seus direitos previstos na apólice.
+              • Boletim de ocorrência local <br />
+              • Cópia do DUT (Documento único de transferência CRV) frente e verso <br />
+              • Cópia da CNH do condutor no momento da colisão frente e verso <br />
+              • Formulário de Aviso de sinistro assinado
             </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="item-3">
             <AccordionTrigger className="text-left">
-              Quais documentos são necessários para dar entrada no sinistro?
+              Para Avisar um sinistro de Roubo / Furto
             </AccordionTrigger>
             <AccordionContent>
-              Os documentos básicos incluem: RG e CPF do segurado, carteira de habilitação (em caso de sinistro automotivo), Boletim de Ocorrência (quando aplicável), comprovante de residência e dados da apólice. Dependendo do tipo de sinistro e cobertura, documentos adicionais podem ser solicitados durante o processo.
+            • Boletim de ocorrência <br />
+            • Cópia do DUT (Documento único de transferência CRV) frente e verso <br />
+            • Cópia da CNH do condutor no momento da colisão frente e verso
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-4">
+            <AccordionTrigger className="text-left">
+              Terceiro
+            </AccordionTrigger>
+            <AccordionContent>
+              Caso você seja o causador do acidente, orientar o seu terceiro a entrar em contato com o departamento de sinistro da Insurance House.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

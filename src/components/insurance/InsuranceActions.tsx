@@ -25,7 +25,7 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
 
   return (
     <div className="mt-8 flex justify-center gap-4">
-      {displayButtons.slice(0, 2).map((button, index) => (
+      {displayButtons.slice(0, 4).map((button, index) => (
         <Button 
           key={index}
           onClick={button.action}

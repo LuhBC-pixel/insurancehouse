@@ -1,4 +1,4 @@
-import { Shield, Phone } from "lucide-react";
+import { Shield } from "lucide-react";
 import {
   Accordion,
   AccordionContent,

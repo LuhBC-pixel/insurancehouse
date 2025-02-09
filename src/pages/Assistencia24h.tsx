@@ -1,4 +1,3 @@
-
 import { HelpCircle } from "lucide-react";
 import { useState } from "react";
 import InsurancePage from "@/components/InsurancePage";
@@ -119,7 +118,7 @@ const Assistencia24h = () => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="mt-2 w-full text-primary hover:text-primary/80"
+                      className="mt-2 w-full text-primary hover:text-white"
                       onClick={() => toggleCard(company.name)}
                     >
                       {expandedCards[company.name] ? (
@@ -144,4 +143,3 @@ const Assistencia24h = () => {
 };
 
 export default Assistencia24h;
-

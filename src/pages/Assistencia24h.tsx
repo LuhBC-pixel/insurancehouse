@@ -61,7 +61,7 @@ const insuranceCompanies = [
   }
 ];
 
-const MAX_LINES = 6; // Maximum number of lines to show before collapsing
+const MAX_LINES = 7; // Maximum number of lines to show before collapsing
 
 const Assistencia24h = () => {
   const [expandedCards, setExpandedCards] = useState<{ [key: string]: boolean }>({});

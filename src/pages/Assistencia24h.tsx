@@ -1,3 +1,4 @@
+
 import { HelpCircle } from "lucide-react";
 import InsurancePage from "@/components/InsurancePage";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -79,12 +80,15 @@ const Assistencia24h = () => {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         {insuranceCompanies.map((company, index) => (
-          <Card key={index} className="hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-xl text-primary">{company.name}</CardTitle>
+          <Card 
+            key={index} 
+            className="hover:shadow-lg transition-shadow bg-gradient-to-br from-white to-gray-50 border border-gray-100"
+          >
+            <CardHeader className="pb-3">
+              <CardTitle className="text-xl font-semibold text-primary">{company.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">{company.description}</p>
+              <p className="text-gray-600 leading-relaxed text-sm">{company.description}</p>
             </CardContent>
           </Card>
         ))}

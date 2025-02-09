@@ -33,6 +33,13 @@ const Footer = () => {
       .replace(/[^a-z0-9-]/g, "");
   };
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('servicos');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-primary text-white">
       <div className="container mx-auto px-4 py-12">
@@ -61,7 +68,7 @@ const Footer = () => {
                 <Button 
                   variant="link" 
                   className="text-gray-300 hover:text-secondary p-0 h-auto font-normal flex items-center gap-1"
-                  onClick={() => window.location.href = '/seguros'}
+                  onClick={scrollToServices}
                 >
                   Ver todos
                   <ChevronRight className="h-4 w-4" />

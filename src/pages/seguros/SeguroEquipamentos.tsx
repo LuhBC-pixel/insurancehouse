@@ -29,7 +29,7 @@ const SeguroEquipamentos = () => {
       title={data.Título}
       descriptions={data.Descrição}
       icon={<Accessibility size={48} />}
-      imageSrc="https://unsplash.com/pt-br/fotografias/mulher-em-pe-perto-da-pessoa-na-cadeira-de-rodas-perto-do-campo-da-grama-verde-0nkFvdcM-X4"
+      imageSrc="https://images.unsplash.com/photo-1591106016785-61fc44806486?q=80&w=1200&h=800&fit=crop"
       buttons={[{
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')

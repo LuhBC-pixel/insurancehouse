@@ -1,4 +1,33 @@
+
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+
 const Footer = () => {
+  const { data: seguros } = useQuery({
+    queryKey: ["seguros-footer"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("Seguros")
+        .select("Título")
+        .order("Título");
+
+      if (error) {
+        throw error;
+      }
+
+      return data;
+    },
+  });
+
+  const formatarUrlSeguro = (titulo: string) => {
+    return "/seguros/" + titulo
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/[^a-z0-9-]/g, "");
+  };
+
   return (
     <footer className="bg-primary text-white">
       <div className="container mx-auto px-4 py-12">
@@ -13,10 +42,16 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Seguros</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="/seguros/auto" className="hover:text-secondary transition-colors">Auto</a></li>
-              <li><a href="/seguros/residencial" className="hover:text-secondary transition-colors">Residencial</a></li>
-              <li><a href="/seguros/vida" className="hover:text-secondary transition-colors">Vida</a></li>
-              <li><a href="/seguros/empresarial" className="hover:text-secondary transition-colors">Empresarial</a></li>
+              {seguros?.map((seguro) => (
+                <li key={seguro.Título}>
+                  <a 
+                    href={formatarUrlSeguro(seguro.Título)} 
+                    className="hover:text-secondary transition-colors"
+                  >
+                    {seguro.Título}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           

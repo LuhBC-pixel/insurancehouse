@@ -29,7 +29,7 @@ const SeguroCartao = () => {
       title={data.Título}
       descriptions={data.Descrição}
       icon={<CreditCard size={48} />}
-      imageSrc="https://images.unsplash.com/photo-1584274039696-50db6740fdbe?q=80&w=1200&h=800&fit=crop"
+      imageSrc="https://images.builderservices.io/s/cdn/v1.0/i/m?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-hostgator-brasil-v1-0-5%2F885%2F1618885%2F44uv39DO%2F629c0665d4654426bdd56c25163ef670&methods=resize%2C1000%2C5000"
       buttons={[{
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')

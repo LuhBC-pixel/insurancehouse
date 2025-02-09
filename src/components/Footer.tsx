@@ -2,6 +2,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import type { Database } from "@/integrations/supabase/types";
+import { Button } from "./ui/button";
+import { ChevronRight } from "lucide-react";
 
 type Seguro = Database['public']['Tables']['Seguros']['Row'];
 
@@ -11,7 +13,8 @@ const Footer = () => {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("Seguros")
-        .select("*"); // Changed from just selecting "Título" to select all fields
+        .select("*")
+        .limit(4); // Limitando para apenas 4 seguros
 
       if (error) {
         throw error;
@@ -54,6 +57,16 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <Button 
+                  variant="link" 
+                  className="text-gray-300 hover:text-secondary p-0 h-auto font-normal flex items-center gap-1"
+                  onClick={() => window.location.href = '/seguros'}
+                >
+                  Ver todos
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </li>
             </ul>
           </div>
           

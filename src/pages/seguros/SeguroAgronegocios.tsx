@@ -1,26 +1,41 @@
+
 import InsurancePage from "@/components/InsurancePage";
-import { MdOutlineWhatsapp } from "react-icons/md";
 import { Leaf } from "lucide-react";
+import { useInsuranceData } from "@/hooks/useInsuranceData";
+import { useToast } from "@/components/ui/use-toast";
 
 const SeguroAgronegocios = () => {
+  const { toast } = useToast();
+  const { data, isLoading, error } = useInsuranceData("AGRONEGÓCIOS");
+
+  if (error) {
+    toast({
+      variant: "destructive",
+      title: "Erro ao carregar dados",
+      description: "Não foi possível carregar as informações do seguro.",
+    });
+  }
+
+  if (isLoading || !data) {
     return (
-        <InsurancePage
-            title="AGRONEGÓCIOS"
-            descriptions={[
-                'O seguro que protege o produtor rural de danos à lavoura causados por eventos da natureza, dentre os quais, destacamos:',
-                '- Granizo e Geada',
-                'Importante: Para cada cultura, estudamos as coberturas, seguradoras e subvenção que melhor se adequam as suas necessidades.'
-            ]}
-            icon={<Leaf size={48} />}
-            imageSrc="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&h=800&fit=crop"
-            buttons={[{
-                icon: <MdOutlineWhatsapp className="mr-2" />,
-                label: "Consulte-nos",
-                action: () => window.open('https://api.whatsapp.com/send?phone=5519996076931&text=Ol%C3%A1%2C%20gostaria%20de%20obter%20informa%C3%A7%C3%B5es%20sobre%20seguro%20agr%C3%ADcola.', '_blank')
-            }]}
-        />
-    )
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
+
+  return (
+    <InsurancePage
+      title={data.Título}
+      descriptions={data.Descrição}
+      icon={<Leaf size={48} />}
+      imageSrc="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&h=800&fit=crop"
+      buttons={[{
+        label: data.LabelPrimeiroBotão,
+        action: () => window.open(data.PrimeiroBotão, '_blank')
+      }]}
+    />
+  );
 };
 
 export default SeguroAgronegocios;
-

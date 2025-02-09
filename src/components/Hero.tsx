@@ -13,7 +13,7 @@ const Hero = () => {
             <p className="text-lg md:text-xl mb-8 text-gray-200">
               Soluções completas em seguros para sua tranquilidade e segurança
             </p>
-            <button className="bg-white hover:bg-accent-light text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button className="bg-white hover:bg-accent-light text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Saiba mais
               <ArrowRight size={20} />
             </button>

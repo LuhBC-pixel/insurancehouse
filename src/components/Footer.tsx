@@ -1,9 +1,12 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import type { Database } from "@/integrations/supabase/types";
+
+type Seguro = Database['public']['Tables']['Seguros']['Row'];
 
 const Footer = () => {
-  const { data: seguros } = useQuery({
+  const { data: seguros } = useQuery<Seguro[]>({
     queryKey: ["seguros-footer"],
     queryFn: async () => {
       const { data, error } = await supabase

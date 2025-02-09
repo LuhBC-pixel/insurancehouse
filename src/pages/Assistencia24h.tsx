@@ -7,55 +7,55 @@ import { MdOutlineWhatsapp } from "react-icons/md";
 const insuranceCompanies = [
   {
     name: "Aliro Seguros",
-    description: "Assistência 24h 0800 770 1318 Todas as regiões",
+    description: ['Assistência 24 horas', '0800 770 1318', 'Todas as regiões'],
   },
   {
     name: "ALLIANZ SEGUROS",
-    description: "WhatsApp 11 4090 1444 e 11 4090 1110 AUTOMÓVEL 0800 0130 700 RESIDÊNCIA E EMPRESA 0800 0177 178",
+    description: ["WhatsApp 11 4090 1444 e 11 4090 1110", "AUTOMÓVEL 0800 0130 700", 'RESIDÊNCIA E EMPRESA 0800 0177 178']
   },
   {
-    name: "SulAmérica",
-    description: "0800 017 0147 (Todo o Brasil) - Assistência 24 horas para veículos, residencial e outros seguros.",
+    name: "AZUL SEGUROS",
+    description: ['WhatsApp 21 3906 2985', 'Capitais e grandes centros 40043700', 'Outras regiões 0300 1232 985 e 0800 7030 203', 'Mercosul +55 11 33662986'],
+  },
+  {
+    name: 'BRADESCO SEGUROS',
+    description: ['WhatsApp 21 4004 2702', 'Capitais e regiões metropolitanas 4004 2757', 'Demais regiões 0800 7012 757', 'Deficiência auditiva ou de fala 0800 7012 762']
   },
   {
     name: "HDI Seguros",
-    description: "3003 5390 (Capitais) e 0800 434 4340 (Demais localidades) - Assistência completa 24h.",
+    description: ['WhatsApp 55 80 0770 1608', '', 'AUTOMÓVEL', 'Região Metropolitana 3003 5390', 'Demais Regiões 0800 4344 340', 'Mercosul 55 11 4133 6636'],
   },
   {
-    name: "Liberty Seguros",
-    description: "0800 702 5100 - Assistência 24 horas para todos os tipos de seguros.",
+    name: "LIBERTY SEGUROS",
+    description: ['WhatsApp 11 3206 1414', 'AUTO E VIDA 0800 7014 120', 'EMPRESA E RESIDÊNCIA 0800 7025 100'],
   },
   {
-    name: "Mapfre Seguros",
-    description: "4004 0101 (Capitais e regiões metropolitanas) e 0800 775 0101 (Outras localidades) - Suporte 24h.",
+    name: "MAPFRE SEGUROS",
+    description: ['Todos os ramos', 'WhatsApp e Região Metropolitana 11 4004 0101', 'Demais Regiões 0800 775 4545'],
   },
   {
-    name: "Tokio Marine",
-    description: "0800 30 TOKIO (0800 30 86546) - Assistência emergencial disponível 24 horas.",
+    name: "PORTO SEGURO",
+    description: ['WhatsApp 11 3003-9303', '', 'PORTO SEGURO AUTOMÓVEL e RESIDÊNCIA', 'Capital 400476786', 'Grande SP 333 76786', 'Demais Localidades 03003376786', 'Mercosul +55 11 33663189', '', 'PORTOCAP SERVIÇOS', 'Capitais e Regiões Metropolitanas 3003 2274', 'Demais localidades 08007271866', '', 'PORTO ALUGUEL E IMOBILIÁRIA Grande SP 33376786', 'Capitais e Grandes centros 400476786', 'Demais localidades 08007272722', '', 'PORTO EMPRESA', 'Grande SP 11 33663110', 'Capitais e Grandes centros 30046268', 'Demais localidades 08007278118', '', 'PORTO VIDA','Grande SP 11 99663377', 'Demais localidades 08007279393']
   },
   {
-    name: "Allianz Seguros",
-    description: "0800 177 178 - Assistência 24 horas para todos os segurados Allianz.",
+    name: "SOMPO SEGUROS",
+    description: ['TODOS OS RAMOS', 'Grande SP 11 31562990', 'Demais localidades 08007719119'],
   },
   {
-    name: "Azul Seguros",
-    description: "0800 703 0203 - Assistência 24 horas para segurados em todo Brasil.",
+    name: "SUHAI",
+    description: ['WhatsApp 11 3003 0335', 'Telefone 08003278424']
   },
   {
-    name: "Sompo Seguros",
-    description: "0800 016 0676 - Atendimento de emergência 24 horas por dia.",
+    name: "SUL AMÉRICA",
+    description: ['Whatsapp 11 3004 9723', 'Capital e Região metropolitana 4090 1073', 'Demais localidades 08007771012', 'Mercosul 55 11 4126 9317']
   },
   {
-    name: "Zurich Seguros",
-    description: "0800 285 4141 - Serviços de assistência 24 horas para todos os segurados.",
+    name: "TÓKIO MARINE",
+    description: ['WhatsApp 11 995786546', '', 'AUTOMÓVEL', 'Território Nacional 0800 31 86546', '', 'AUTO FROTA', 'Território Nacional 08003286546', 'CARRO RESERVA 08002086546', '', 'SERVIÇO DE VIDROS', 'Território Nacional 08007078005', 'RESIDÊNCIA 08003086546', 'VIDA 08007055050'],
   },
   {
-    name: "Itaú Seguros",
-    description: "0800 034 8737 - Assistência 24 horas para todos os produtos Itaú Seguros.",
-  },
-  {
-    name: "Chubb Seguros",
-    description: "0800 722 2492 - Assistência emergencial 24 horas para segurados Chubb.",
+    name: "ZURICH SEGUROS",
+    description: ['WhatsApp 11 28902121', '', 'AUTOMÓVEL, RESIDÊNCIA E VIDA', 'Território Nacional 08007291400', '', 'VIDROS', 'Território Nacional 08000256303'],
   }
 ];
 
@@ -88,7 +88,13 @@ const Assistencia24h = () => {
               <CardTitle className="text-xl font-semibold text-primary">{company.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 leading-relaxed text-sm">{company.description}</p>
+              {typeof company.description === 'string' ? (
+                <p className="text-gray-600 leading-relaxed text-sm">{company.description}</p>
+              ) : (
+                company.description.map((text, index) => (
+                  <p key={index} className="text-gray-600 leading-relaxed text-sm">{text}</p>
+                ))
+              )}
             </CardContent>
           </Card>
         ))}

@@ -1,4 +1,4 @@
-import { Shield, AlertTriangle, FileText, ExternalLink } from "lucide-react";
+import { Shield } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/accordion";
 import InsurancePage from "@/components/InsurancePage";
 import { MdOutlineWhatsapp } from "react-icons/md";
-import { Button } from "@/components/ui/button";
 
 const Sinistro = () => {
   return (
@@ -21,19 +20,16 @@ const Sinistro = () => {
       imageSrc="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
       buttons={[
         {
-          icon: <AlertTriangle className="mr-2 text-red-500" />,
           label: "Registrar B.O online",
           action: () => window.open('https://www.delegaciaeletronica.policiacivil.sp.gov.br/ssp-de-cidadao/pages/comunicar-ocorrencia', '_blank'),
-          variant: "outline",
+          variant: "default",
         },
         {
-          icon: <FileText className="mr-2 text-blue-500" />,
           label: "Consulta FIPE",
           action: () => window.open('https://veiculos.fipe.org.br/#carro', '_blank'),
-          variant: "outline",
+          variant: "default",
         },
         {
-          icon: <ExternalLink className="mr-2 text-primary" />,
           label: "Comunicação de sinistro automóvel",
           action: () => window.open('https://forms.gle/Kt4moViXJQVTtWFx7', '_blank'),
           variant: "default",

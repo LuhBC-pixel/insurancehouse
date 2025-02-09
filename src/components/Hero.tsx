@@ -1,3 +1,4 @@
+
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
@@ -12,7 +13,7 @@ const Hero = () => {
             <p className="text-lg md:text-xl mb-8 text-gray-200">
               Soluções completas em seguros para sua tranquilidade e segurança
             </p>
-            <button className="bg-secondary text-primary px-8 py-3 rounded-md font-semibold flex items-center gap-2 hover:bg-secondary-light transition-colors">
+            <button className="bg-secondary hover:bg-secondary-light text-primary px-8 py-3 rounded-md font-semibold flex items-center gap-2 transition-colors">
               Faça sua cotação
               <ArrowRight size={20} />
             </button>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '../ui/button';
@@ -6,6 +7,7 @@ interface ButtonConfig {
   icon?: React.ReactNode;
   label: string;
   action: () => void;
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
 }
 
 interface InsuranceActionsProps {
@@ -17,7 +19,8 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
     {
       icon: <MessageSquare className="mr-2" />,
       label: "Entre em contato",
-      action: () => window.open('https://api.whatsapp.com/send?phone=551938733736', '_blank')
+      action: () => window.open('https://api.whatsapp.com/send?phone=551938733736', '_blank'),
+      variant: "default"
     }
   ];
 
@@ -29,6 +32,7 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
         <Button 
           key={index}
           onClick={button.action}
+          variant={button.variant || "default"}
           className="w-full md:w-auto"
         >
           {button.icon}

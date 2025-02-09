@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useToast } from './ui/use-toast';
 import Navbar from './Navbar';
@@ -11,6 +12,7 @@ interface ButtonConfig {
   icon?: React.ReactNode;
   label: string;
   action: () => void;
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
 }
 
 interface InsurancePageProps {

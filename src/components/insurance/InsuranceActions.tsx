@@ -36,7 +36,7 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
             key={index}
             onClick={button.action}
             variant={button.variant || "default"}
-            className="w-full sm:w-auto transition-all hover:scale-105 shadow-sm hover:shadow-md"
+            className="w-full sm:w-auto"
           >
             {button.icon}
             {button.label}

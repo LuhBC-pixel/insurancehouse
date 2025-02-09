@@ -1,5 +1,4 @@
-
-import { Shield } from "lucide-react";
+import { Shield, AlertTriangle, FileText, ExternalLink } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -9,7 +8,6 @@ import {
 import InsurancePage from "@/components/InsurancePage";
 import { MdOutlineWhatsapp } from "react-icons/md";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileText, Phone, AlertTriangle } from "lucide-react";
 
 const Sinistro = () => {
   return (
@@ -19,29 +17,29 @@ const Sinistro = () => {
         "Estes são os documentos iniciais para comunicar um sinistro, documentos complementares poderão ser solicitados no decorrer da análise.",
         "Dúvidas Frequentes:",
       ]}
-      icon={<Shield />}
+      icon={<Shield className="text-primary" />}
       imageSrc="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
       buttons={[
         {
-          icon: <AlertTriangle className="mr-2" />,
+          icon: <AlertTriangle className="mr-2 text-red-500" />,
           label: "Registrar B.O online",
           action: () => window.open('https://www.delegaciaeletronica.policiacivil.sp.gov.br/ssp-de-cidadao/pages/comunicar-ocorrencia', '_blank'),
-          variant: "secondary",
+          variant: "outline",
         },
         {
-          icon: <FileText className="mr-2" />,
+          icon: <FileText className="mr-2 text-blue-500" />,
           label: "Consulta FIPE",
           action: () => window.open('https://veiculos.fipe.org.br/#carro', '_blank'),
-          variant: "secondary",
+          variant: "outline",
         },
         {
-          icon: <ExternalLink className="mr-2" />,
+          icon: <ExternalLink className="mr-2 text-primary" />,
           label: "Comunicação de sinistro automóvel",
           action: () => window.open('https://forms.gle/Kt4moViXJQVTtWFx7', '_blank'),
           variant: "default",
         },
         {
-          icon: <MdOutlineWhatsapp className="mr-2" />,
+          icon: <MdOutlineWhatsapp className="mr-2 text-green-500 text-lg" />,
           label: "Contato departamento de sinistros/assistências",
           action: () => window.open('https://api.whatsapp.com/send/?phone=5519998805205&text&type=phone_number&app_absent=0', '_blank'),
           variant: "default",

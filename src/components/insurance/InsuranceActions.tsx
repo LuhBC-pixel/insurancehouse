@@ -27,13 +27,13 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
   const displayButtons = buttons || defaultButtons;
 
   return (
-    <div className="mt-8 flex justify-center gap-4">
+    <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
       {displayButtons.slice(0, 4).map((button, index) => (
         <Button 
           key={index}
           onClick={button.action}
           variant={button.variant || "default"}
-          className="w-full md:w-auto"
+          className="w-full sm:w-auto transition-all hover:scale-105 shadow-sm hover:shadow-md"
         >
           {button.icon}
           {button.label}

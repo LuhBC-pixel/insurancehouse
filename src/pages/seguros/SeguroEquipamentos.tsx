@@ -29,7 +29,7 @@ const SeguroEquipamentos = () => {
       title={data.Título}
       descriptions={data.Descrição}
       icon={<Accessibility size={48} />}
-      imageSrc="https://images.unsplash.com/photo-1534321238895-da3ab632df3e?q=80&w=1200&h=800&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?q=80&w=1200&h=800&fit=crop"
       buttons={[{
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')

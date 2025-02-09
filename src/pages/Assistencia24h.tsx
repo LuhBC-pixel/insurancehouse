@@ -1,8 +1,11 @@
 
 import { HelpCircle } from "lucide-react";
+import { useState } from "react";
 import InsurancePage from "@/components/InsurancePage";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { MdOutlineWhatsapp } from "react-icons/md";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const insuranceCompanies = [
   {
@@ -59,7 +62,22 @@ const insuranceCompanies = [
   }
 ];
 
+const MAX_LINES = 6; // Maximum number of lines to show before collapsing
+
 const Assistencia24h = () => {
+  const [expandedCards, setExpandedCards] = useState<{ [key: string]: boolean }>({});
+
+  const toggleCard = (companyName: string) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [companyName]: !prev[companyName]
+    }));
+  };
+
+  const shouldShowExpandButton = (description: string[]) => {
+    return description.length > MAX_LINES;
+  };
+
   return (
     <InsurancePage
       title="Assistência 24H"
@@ -91,9 +109,31 @@ const Assistencia24h = () => {
               {typeof company.description === 'string' ? (
                 <p className="text-gray-600 leading-relaxed text-sm">{company.description}</p>
               ) : (
-                company.description.map((text, index) => (
-                  <p key={index} className="text-gray-600 leading-relaxed text-sm">{text}</p>
-                ))
+                <>
+                  <div className={`space-y-1 ${!expandedCards[company.name] && shouldShowExpandButton(company.description) ? 'line-clamp-6' : ''}`}>
+                    {company.description.map((text, index) => (
+                      <p key={index} className="text-gray-600 leading-relaxed text-sm">{text}</p>
+                    ))}
+                  </div>
+                  {shouldShowExpandButton(company.description) && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="mt-2 w-full text-primary hover:text-primary/80"
+                      onClick={() => toggleCard(company.name)}
+                    >
+                      {expandedCards[company.name] ? (
+                        <>
+                          Ver menos <ChevronUp className="ml-2 h-4 w-4" />
+                        </>
+                      ) : (
+                        <>
+                          Ver mais <ChevronDown className="ml-2 h-4 w-4" />
+                        </>
+                      )}
+                    </Button>
+                  )}
+                </>
               )}
             </CardContent>
           </Card>
@@ -104,3 +144,4 @@ const Assistencia24h = () => {
 };
 
 export default Assistencia24h;
+

@@ -11,8 +11,7 @@ const Footer = () => {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("Seguros")
-        .select("Título")
-        .order("Título");
+        .select("*"); // Changed from just selecting "Título" to select all fields
 
       if (error) {
         throw error;

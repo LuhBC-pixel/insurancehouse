@@ -92,8 +92,6 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300">
               <li>Segunda - Sexta</li>
               <li>08:00 - 17:00</li>
-              <li>Plantão 24h para</li>
-              <li>emergências</li>
             </ul>
           </div>
         </div>

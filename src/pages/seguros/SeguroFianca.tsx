@@ -29,7 +29,7 @@ const SeguroFianca = () => {
       title={data.Título}
       descriptions={data.Descrição}
       icon={<Key size={48} />}
-      imageSrc="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&h=800&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&h=800&fit=crop"
       buttons={[{
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')

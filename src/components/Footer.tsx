@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import type { Database } from "@/integrations/supabase/types";
 import { Button } from "./ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Facebook, Instagram } from "lucide-react";
 
 type Seguro = Database['public']['Tables']['Seguros']['Row'];
 
@@ -14,7 +14,7 @@ const Footer = () => {
       const { data, error } = await supabase
         .from("Seguros")
         .select("*")
-        .limit(4); // Limitando para apenas 4 seguros
+        .limit(4);
 
       if (error) {
         throw error;
@@ -49,6 +49,24 @@ const Footer = () => {
             <p className="text-gray-300">
               Sua segurança é nossa prioridade. Conte conosco para proteger o que é importante para você.
             </p>
+            <div className="flex gap-4 mt-4">
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-secondary transition-colors"
+              >
+                <Instagram size={24} />
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-secondary transition-colors"
+              >
+                <Facebook size={24} />
+              </a>
+            </div>
           </div>
           
           <div>

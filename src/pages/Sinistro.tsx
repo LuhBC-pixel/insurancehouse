@@ -24,11 +24,13 @@ const Sinistro = () => {
           label: "Registrar B.O online",
           action: () => window.open('https://www.delegaciaeletronica.policiacivil.sp.gov.br/ssp-de-cidadao/pages/comunicar-ocorrencia', '_blank'),
           variant: "default",
+          className: "hover:scale-105 transition-transform",
         },
         {
           label: "Consulta FIPE",
           action: () => window.open('https://veiculos.fipe.org.br/#carro', '_blank'),
           variant: "default",
+          className: "hover:scale-105 transition-transform",
         },
         {
           label: "Comunicação de sinistro automóvel",

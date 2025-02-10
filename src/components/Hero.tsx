@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
           <div className="animate-slide-in hidden md:block">
             <img 
-              src="/lovable-uploads/97fcf2e3-2db2-4f58-a005-b7d9cef1709b.png" 
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&h=800&fit=crop" 
               alt="Segurança e Proteção" 
               className="w-full max-w-lg mx-auto rounded-lg shadow-xl"
             />

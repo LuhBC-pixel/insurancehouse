@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { MessageSquare } from 'lucide-react';
 import { Button } from '../ui/button';
+import { MdOutlineWhatsapp } from 'react-icons/md';
 
 interface ButtonConfig {
   icon?: React.ReactNode;
@@ -18,10 +18,11 @@ interface InsuranceActionsProps {
 const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
   const defaultButtons: ButtonConfig[] = [
     {
-      icon: <MessageSquare className="mr-2" />,
+      icon: <MdOutlineWhatsapp className="mr-2" />,
       label: "Entre em contato",
       action: () => window.open('https://api.whatsapp.com/send?phone=551938733736', '_blank'),
-      variant: "default"
+      variant: "default",
+      className: "hover:scale-105 transition-transform",
     }
   ];
 

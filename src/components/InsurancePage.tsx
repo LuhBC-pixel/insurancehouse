@@ -13,6 +13,7 @@ interface ButtonConfig {
   label: string;
   action: () => void;
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  className?: string;
 }
 
 interface InsurancePageProps {

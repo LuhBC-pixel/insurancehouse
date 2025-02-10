@@ -1,3 +1,4 @@
+
 import { Shield } from "lucide-react";
 import {
   Accordion,
@@ -17,7 +18,7 @@ const Sinistro = () => {
         "Dúvidas Frequentes:",
       ]}
       icon={<Shield className="text-primary" />}
-      imageSrc="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+      imageSrc="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?q=80&w=1200&h=800&fit=crop"
       buttons={[
         {
           label: "Registrar B.O online",

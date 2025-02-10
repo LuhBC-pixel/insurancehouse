@@ -8,6 +8,7 @@ interface ButtonConfig {
   label: string;
   action: () => void;
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  className?: string;
 }
 
 interface InsuranceActionsProps {
@@ -36,7 +37,7 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
             key={index}
             onClick={button.action}
             variant={button.variant || "default"}
-            className="w-full sm:w-auto"
+            className={`w-full sm:w-auto ${button.className || ''}`}
           >
             {button.icon}
             {button.label}
@@ -49,7 +50,7 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
             key={index}
             onClick={button.action}
             variant={button.variant || "default"}
-            className="w-full sm:w-auto transition-all hover:scale-105 shadow-sm hover:shadow-md"
+            className={`w-full sm:w-auto transition-all hover:scale-105 shadow-sm hover:shadow-md ${button.className || ''}`}
           >
             {button.icon}
             {button.label}

@@ -3,6 +3,7 @@ import InsurancePage from "@/components/InsurancePage";
 import { HeartPulse } from 'lucide-react';
 import { useInsuranceData } from "@/hooks/useInsuranceData";
 import { useToast } from "@/components/ui/use-toast";
+import { MdOutlineWhatsapp } from "react-icons/md";
 
 const SeguroSaude = () => {
   const { toast } = useToast();
@@ -31,6 +32,7 @@ const SeguroSaude = () => {
       icon={<HeartPulse size={48} />}
       imageSrc="https://images.unsplash.com/photo-1631815587646-b85a1bb027e1?q=80&w=1200&h=800&fit=crop"
       buttons={[{
+        icon: <MdOutlineWhatsapp className="mr-2" />,
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')
       }]}

@@ -1,8 +1,9 @@
 
 import InsurancePage from "@/components/InsurancePage";
-import { HandCoins, MessageSquare } from "lucide-react";
+import { HandCoins } from "lucide-react";
 import { useInsuranceData } from "@/hooks/useInsuranceData";
 import { useToast } from "@/components/ui/use-toast";
+import { MdOutlineWhatsapp } from "react-icons/md";
 
 const SeguroEmprestimo = () => {
   const { toast } = useToast();
@@ -31,7 +32,7 @@ const SeguroEmprestimo = () => {
       icon={<HandCoins size={48} />}
       imageSrc="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=1200&h=800&fit=crop"
       buttons={[{
-        icon: <MessageSquare className="mr-2" />,
+        icon: <MdOutlineWhatsapp className="mr-2" />,
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')
       }]}

@@ -3,6 +3,7 @@ import InsurancePage from '@/components/InsurancePage';
 import { Bike } from 'lucide-react';
 import { useInsuranceData } from "@/hooks/useInsuranceData";
 import { useToast } from "@/components/ui/use-toast";
+import { MdOutlineWhatsapp } from "react-icons/md";
 
 const SeguroProdutosDiversos = () => {
   const { toast } = useToast();
@@ -30,6 +31,7 @@ const SeguroProdutosDiversos = () => {
       descriptions={data.Descrição}
       icon={<Bike size={48} />}
       buttons={[{
+        icon: <MdOutlineWhatsapp className="mr-2" />,
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')
       }]}

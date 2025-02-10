@@ -3,6 +3,7 @@ import InsurancePage from "@/components/InsurancePage";
 import { Building2 } from "lucide-react";
 import { useInsuranceData } from "@/hooks/useInsuranceData";
 import { useToast } from "@/components/ui/use-toast";
+import { MdOutlineWhatsapp } from "react-icons/md";
 
 const SeguroEmpresariais = () => {
   const { toast } = useToast();
@@ -32,6 +33,7 @@ const SeguroEmpresariais = () => {
       imageSrc="https://images.unsplash.com/photo-1435575653489-b0873ec954e2?q=80&w=1200&h=800&fit=crop"
       buttons={[
         {
+          icon: <MdOutlineWhatsapp className="mr-2" />,
           label: data.LabelPrimeiroBotão,
           action: () => window.open(data.PrimeiroBotão, '_blank')
         },

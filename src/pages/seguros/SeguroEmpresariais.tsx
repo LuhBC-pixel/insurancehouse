@@ -29,7 +29,7 @@ const SeguroEmpresariais = () => {
       title={data.Título}
       descriptions={data.Descrição}
       icon={<Building2 size={48} />}
-      imageSrc="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=1200&h=800&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1435575653489-b0873ec954e2?q=80&w=1200&h=800&fit=crop"
       buttons={[
         {
           label: data.LabelPrimeiroBotão,

@@ -97,13 +97,12 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4">
+          <div className="md:hidden pb-4 max-h-[calc(100vh-7rem)] overflow-y-auto">
             <div className="flex flex-col space-y-4">
               <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
               
               {/* Mobile Seguros Links */}
               <div className="flex flex-col space-y-2 pl-4">
-                <span className="text-text font-medium">Seguros:</span>
                 {segurosLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -135,3 +134,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

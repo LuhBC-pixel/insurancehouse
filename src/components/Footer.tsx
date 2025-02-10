@@ -51,7 +51,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4 mt-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/ihseguros/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-secondary transition-colors"

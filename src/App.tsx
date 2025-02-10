@@ -1,8 +1,10 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
 import Index from "./pages/Index";
 import SeguroAuto from "./pages/seguros/SeguroAuto";
 import SeguroResidencial from "./pages/seguros/SeguroResidencial";
@@ -20,7 +22,6 @@ import SeguroProdutosDiversos from "./pages/seguros/SeguroProdutosDIversos";
 import Sinistro from "./pages/Sinistro";
 import Assistencia24h from "./pages/Assistencia24h";
 import NotFound from "./pages/NotFound";
-import { Analytics } from '@vercel/analytics/react';
 
 const queryClient = new QueryClient();
 
@@ -49,9 +50,9 @@ const App = () => (
           <Route path="/assistencia-24h" element={<Assistencia24h />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Analytics />
       </BrowserRouter>
     </TooltipProvider>
-    <Analytics />
   </QueryClientProvider>
 );
 

@@ -29,7 +29,7 @@ const SeguroCartao = () => {
       title={data.Título}
       descriptions={data.Descrição}
       icon={<CreditCard size={48} />}
-      imageSrc="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&h=800&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&h=800&fit=crop"
       buttons={[{
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')

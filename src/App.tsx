@@ -20,6 +20,7 @@ import SeguroProdutosDiversos from "./pages/seguros/SeguroProdutosDIversos";
 import Sinistro from "./pages/Sinistro";
 import Assistencia24h from "./pages/Assistencia24h";
 import NotFound from "./pages/NotFound";
+import { Analytics } from '@vercel/analytics/react';
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    <Analytics />
   </QueryClientProvider>
 );
 

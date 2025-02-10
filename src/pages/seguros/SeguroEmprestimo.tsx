@@ -29,7 +29,7 @@ const SeguroEmprestimo = () => {
       title={data.Título}
       descriptions={data.Descrição}
       icon={<HandCoins size={48} />}
-      imageSrc="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1200&h=800&fit=crop"
+      imageSrc="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=1200&h=800&fit=crop"
       buttons={[{
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')

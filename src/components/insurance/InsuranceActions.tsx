@@ -22,7 +22,7 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
       label: "Entre em contato",
       action: () => window.open('https://api.whatsapp.com/send?phone=551938733736', '_blank'),
       variant: "default",
-      className: "hover:scale-105 transition-transform",
+      className: "hover:scale-105 transition-all duration-300 ease-in-out transform hover:shadow-lg",
     }
   ];
 
@@ -38,7 +38,7 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
             key={index}
             onClick={button.action}
             variant={button.variant || "default"}
-            className={`w-full sm:w-auto ${button.className || ''}`}
+            className={`w-full sm:w-auto animate-fade-in transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg ${button.className || ''}`}
           >
             {button.icon}
             {button.label}
@@ -51,7 +51,7 @@ const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
             key={index}
             onClick={button.action}
             variant={button.variant || "default"}
-            className={`w-full sm:w-auto transition-all hover:scale-105 shadow-sm hover:shadow-md ${button.className || ''}`}
+            className={`w-full sm:w-auto animate-fade-in transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg ${button.className || ''}`}
           >
             {button.icon}
             {button.label}

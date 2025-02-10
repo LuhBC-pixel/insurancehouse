@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { MdOutlineWhatsapp } from 'react-icons/md';
@@ -32,7 +33,7 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/61910bfa-2da7-4781-a20b-d4620f3be4ab.png" 
                 alt="Insurance House Logo" 
-                className="h-24 w-auto"
+                className="h-28 w-auto"
               />
             </Link>
           </div>

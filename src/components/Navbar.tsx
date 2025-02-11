@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { MdOutlineWhatsapp } from 'react-icons/md';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,20 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Add effect to control body scroll
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const segurosLinks = [
     { title: "Seguro Auto", href: "/seguros/auto" },
@@ -101,38 +115,40 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 max-h-[calc(100vh-7rem)] overflow-y-auto">
-            <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Início</Link>
-              
-              {/* Mobile Seguros Links */}
-              <div className="flex flex-col space-y-2 pl-4">
-                {segurosLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className="text-text hover:text-accent transition-colors text-sm"
-                    onClick={handleAnchorClick}
-                  >
-                    {link.title}
-                  </Link>
-                ))}
-              </div>
+          <div className="md:hidden fixed inset-x-0 top-28 bottom-0 bg-white overflow-y-auto">
+            <div className="container mx-auto px-4 pb-4">
+              <div className="flex flex-col space-y-4">
+                <Link to="/" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Início</Link>
+                
+                {/* Mobile Seguros Links */}
+                <div className="flex flex-col space-y-2 pl-4">
+                  {segurosLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="text-text hover:text-accent transition-colors text-sm"
+                      onClick={handleAnchorClick}
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
 
-              <Link to="/sinistro" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sinistro</Link>
-              <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Assistência 24h</Link>
-              <a href="#sobre" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sobre</a>
-              <a href="#contato" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Contato</a>
-              <button 
-                className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg"
-                onClick={() => {
-                  setIsOpen(false);
-                  window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank");
-                }}
-              >
-                <MdOutlineWhatsapp size={24} className="text-white" />
-                Fale Conosco
-              </button>
+                <Link to="/sinistro" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sinistro</Link>
+                <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Assistência 24h</Link>
+                <a href="#sobre" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sobre</a>
+                <a href="#contato" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Contato</a>
+                <button 
+                  className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg"
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank");
+                  }}
+                >
+                  <MdOutlineWhatsapp size={24} className="text-white" />
+                  Fale Conosco
+                </button>
+              </div>
             </div>
           </div>
         )}

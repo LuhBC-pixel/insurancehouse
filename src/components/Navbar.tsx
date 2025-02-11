@@ -24,6 +24,10 @@ const Navbar = () => {
     { title: "Seguro Produtos Diversos", href: "/seguros/produtos-diversos" }
   ];
 
+  const handleAnchorClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="container mx-auto px-4">
@@ -99,7 +103,7 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden pb-4 max-h-[calc(100vh-7rem)] overflow-y-auto">
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
+              <Link to="/" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Início</Link>
               
               {/* Mobile Seguros Links */}
               <div className="flex flex-col space-y-2 pl-4">
@@ -108,19 +112,23 @@ const Navbar = () => {
                     key={link.href}
                     to={link.href}
                     className="text-text hover:text-accent transition-colors text-sm"
+                    onClick={handleAnchorClick}
                   >
                     {link.title}
                   </Link>
                 ))}
               </div>
 
-              <Link to="/sinistro" className="text-text hover:text-accent transition-colors">Sinistro</Link>
-              <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors">Assistência 24h</Link>
-              <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
-              <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
+              <Link to="/sinistro" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sinistro</Link>
+              <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Assistência 24h</Link>
+              <a href="#sobre" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sobre</a>
+              <a href="#contato" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Contato</a>
               <button 
                 className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg"
-                onClick={() => window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank")}
+                onClick={() => {
+                  setIsOpen(false);
+                  window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank");
+                }}
               >
                 <MdOutlineWhatsapp size={24} className="text-white" />
                 Fale Conosco
@@ -134,4 +142,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

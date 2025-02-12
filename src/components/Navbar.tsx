@@ -2,12 +2,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { MdOutlineWhatsapp } from 'react-icons/md';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Add effect to control body scroll
   useEffect(() => {
@@ -48,6 +49,24 @@ const Navbar = () => {
     navigate('/', { state: { scrollTo: section } });
   };
 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      const heroSection = document.getElementById('inicio');
+      if (heroSection) {
+        const navbarHeight = 112; // altura do navbar (28 * 4 = 112px)
+        const elementPosition = heroSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+      setIsOpen(false);
+    }
+  };
+
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="container mx-auto px-4">
@@ -64,7 +83,13 @@ const Navbar = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
+            <Link 
+              to="/" 
+              className="text-text hover:text-accent transition-colors"
+              onClick={handleHomeClick}
+            >
+              Início
+            </Link>
             
             {/* Seguros Dropdown */}
             <div className="relative group">
@@ -134,7 +159,16 @@ const Navbar = () => {
           <div className="md:hidden fixed inset-x-0 top-28 bottom-0 bg-white overflow-y-auto">
             <div className="container mx-auto px-4 pb-4">
               <div className="flex flex-col space-y-4">
-                <Link to="/" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Início</Link>
+                <Link 
+                  to="/" 
+                  className="text-text hover:text-accent transition-colors"
+                  onClick={(e) => {
+                    handleHomeClick(e);
+                    handleAnchorClick();
+                  }}
+                >
+                  Início
+                </Link>
                 
                 {/* Mobile Seguros Links */}
                 <div className="flex flex-col space-y-2 pl-4">

@@ -2,11 +2,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { MdOutlineWhatsapp } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Add effect to control body scroll
   useEffect(() => {
@@ -40,6 +41,11 @@ const Navbar = () => {
 
   const handleAnchorClick = () => {
     setIsOpen(false);
+  };
+
+  const handleSectionClick = (section: string) => {
+    setIsOpen(false);
+    navigate('/', { state: { scrollTo: section } });
   };
 
   return (
@@ -91,8 +97,18 @@ const Navbar = () => {
 
             <Link to="/sinistro" className="text-text hover:text-accent transition-colors">Sinistro</Link>
             <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors">Assistência 24h</Link>
-            <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
-            <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
+            <button 
+              onClick={() => handleSectionClick('sobre')} 
+              className="text-text hover:text-accent transition-colors"
+            >
+              Sobre
+            </button>
+            <button 
+              onClick={() => handleSectionClick('contato')} 
+              className="text-text hover:text-accent transition-colors"
+            >
+              Contato
+            </button>
           </div>
           
           <div className="hidden md:flex">
@@ -136,8 +152,18 @@ const Navbar = () => {
 
                 <Link to="/sinistro" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sinistro</Link>
                 <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Assistência 24h</Link>
-                <a href="#sobre" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sobre</a>
-                <a href="#contato" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Contato</a>
+                <button 
+                  onClick={() => handleSectionClick('sobre')} 
+                  className="text-text hover:text-accent transition-colors text-left"
+                >
+                  Sobre
+                </button>
+                <button 
+                  onClick={() => handleSectionClick('contato')} 
+                  className="text-text hover:text-accent transition-colors text-left"
+                >
+                  Contato
+                </button>
                 <button 
                   className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg"
                   onClick={() => {

@@ -17,11 +17,11 @@ import SeguroCartao from "./pages/seguros/SeguroCartao";
 import SeguroEmprestimo from "./pages/seguros/SeguroEmprestimo";
 import SeguroSaude from "./pages/seguros/SeguroSaude";
 import SeguroEquipamentos from "./pages/seguros/SeguroEquipamentos";
-import Agronegocios from "./pages/seguros/agronegocios";
 import SeguroProdutosDiversos from "./pages/seguros/SeguroProdutosDIversos";
 import Sinistro from "./pages/Sinistro";
 import Assistencia24h from "./pages/Assistencia24h";
 import NotFound from "./pages/NotFound";
+import SeguroAgronegocios from "./pages/seguros/SeguroAgronegocios";
 
 const queryClient = new QueryClient();
 
@@ -44,7 +44,7 @@ const App = () => (
           <Route path="/seguros/emprestimo" element={<SeguroEmprestimo />} />
           <Route path="/seguros/saude" element={<SeguroSaude />} />
           <Route path="/seguros/equipamentos" element={<SeguroEquipamentos />} />
-          <Route path="/seguros/agronegocios" element={<Agronegocios />} />
+          <Route path="/seguros/agronegocios" element={<SeguroAgronegocios />} />
           <Route path="/seguros/produtos-diversos" element={<SeguroProdutosDiversos />} />
           <Route path="/sinistro" element={<Sinistro />} />
           <Route path="/assistencia-24h" element={<Assistencia24h />} />

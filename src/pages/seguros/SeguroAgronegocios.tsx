@@ -5,7 +5,7 @@ import { useInsuranceData } from "@/hooks/useInsuranceData";
 import { useToast } from "@/components/ui/use-toast";
 import { MdOutlineWhatsapp } from "react-icons/md";
 
-const Agronegocios = () => {
+const SeguroAgronegocios = () => {
   const { toast } = useToast();
   const { data, isLoading, error } = useInsuranceData("AGRONEGÓCIOS");
 
@@ -40,4 +40,4 @@ const Agronegocios = () => {
   );
 };
 
-export default Agronegocios;
+export default SeguroAgronegocios;

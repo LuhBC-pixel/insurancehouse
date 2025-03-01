@@ -1,3 +1,4 @@
+
 import { Users, Award, Clock, PhoneCall, Handshake } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
@@ -5,7 +6,10 @@ const CountUpAnimation = ({ end, duration = 2000, shouldAnimate }: { end: number
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!shouldAnimate) return;
+    if (!shouldAnimate) {
+      setCount(end); // Set the final value immediately if not animating
+      return;
+    }
     
     let startTime: number;
     let animationFrame: number;
@@ -26,7 +30,7 @@ const CountUpAnimation = ({ end, duration = 2000, shouldAnimate }: { end: number
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration, shouldAnimate]);
 
-  return <>{shouldAnimate ? count : 0}</>;
+  return <>{count}</>;
 };
 
 const StatCard = ({ icon: Icon, number, text, isVisible }: { icon: any, number: string, text: string, isVisible: boolean }) => {
@@ -34,7 +38,7 @@ const StatCard = ({ icon: Icon, number, text, isVisible }: { icon: any, number: 
   const suffix = number.replace(/[0-9]/g, '');
 
   return (
-    <div className="text-center animate-fade-in animate-slide-in">
+    <div className="text-center animate-fade-in animate-slide-in select-none">
       <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-105 transition-transform duration-300">
         <Icon className="text-primary" size={32} />
       </div>

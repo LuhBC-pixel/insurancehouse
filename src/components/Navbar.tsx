@@ -1,12 +1,28 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { MdOutlineWhatsapp } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Add effect to control body scroll
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const segurosLinks = [
     { title: "Seguro Auto", href: "/seguros/auto" },
@@ -24,6 +40,33 @@ const Navbar = () => {
     { title: "Seguro Produtos Diversos", href: "/seguros/produtos-diversos" }
   ];
 
+  const handleAnchorClick = () => {
+    setIsOpen(false);
+  };
+
+  const handleSectionClick = (section: string) => {
+    setIsOpen(false);
+    navigate('/', { state: { scrollTo: section } });
+  };
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      const heroSection = document.getElementById('inicio');
+      if (heroSection) {
+        const navbarHeight = 112; // altura do navbar (28 * 4 = 112px)
+        const elementPosition = heroSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+      setIsOpen(false);
+    }
+  };
+
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="container mx-auto px-4">
@@ -40,7 +83,13 @@ const Navbar = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
+            <Link 
+              to="/" 
+              className="text-text hover:text-accent transition-colors"
+              onClick={handleHomeClick}
+            >
+              Início
+            </Link>
             
             {/* Seguros Dropdown */}
             <div className="relative group">
@@ -73,8 +122,18 @@ const Navbar = () => {
 
             <Link to="/sinistro" className="text-text hover:text-accent transition-colors">Sinistro</Link>
             <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors">Assistência 24h</Link>
-            <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
-            <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
+            <button 
+              onClick={() => handleSectionClick('sobre')} 
+              className="text-text hover:text-accent transition-colors"
+            >
+              Sobre
+            </button>
+            <button 
+              onClick={() => handleSectionClick('contato')} 
+              className="text-text hover:text-accent transition-colors"
+            >
+              Contato
+            </button>
           </div>
           
           <div className="hidden md:flex">
@@ -97,34 +156,59 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 max-h-[calc(100vh-7rem)] overflow-y-auto">
-            <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-text hover:text-accent transition-colors">Início</Link>
-              
-              {/* Mobile Seguros Links */}
-              <div className="flex flex-col space-y-2 pl-4">
-                {segurosLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className="text-text hover:text-accent transition-colors text-sm"
-                  >
-                    {link.title}
-                  </Link>
-                ))}
-              </div>
+          <div className="md:hidden fixed inset-x-0 top-28 bottom-0 bg-white overflow-y-auto">
+            <div className="container mx-auto px-4 pb-4">
+              <div className="flex flex-col space-y-4">
+                <Link 
+                  to="/" 
+                  className="text-text hover:text-accent transition-colors"
+                  onClick={(e) => {
+                    handleHomeClick(e);
+                    handleAnchorClick();
+                  }}
+                >
+                  Início
+                </Link>
+                
+                {/* Mobile Seguros Links */}
+                <div className="flex flex-col space-y-2 pl-4">
+                  {segurosLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="text-text hover:text-accent transition-colors text-sm"
+                      onClick={handleAnchorClick}
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
 
-              <Link to="/sinistro" className="text-text hover:text-accent transition-colors">Sinistro</Link>
-              <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors">Assistência 24h</Link>
-              <a href="#sobre" className="text-text hover:text-accent transition-colors">Sobre</a>
-              <a href="#contato" className="text-text hover:text-accent transition-colors">Contato</a>
-              <button 
-                className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg"
-                onClick={() => window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank")}
-              >
-                <MdOutlineWhatsapp size={24} className="text-white" />
-                Fale Conosco
-              </button>
+                <Link to="/sinistro" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Sinistro</Link>
+                <Link to="/assistencia-24h" className="text-text hover:text-accent transition-colors" onClick={handleAnchorClick}>Assistência 24h</Link>
+                <button 
+                  onClick={() => handleSectionClick('sobre')} 
+                  className="text-text hover:text-accent transition-colors text-left"
+                >
+                  Sobre
+                </button>
+                <button 
+                  onClick={() => handleSectionClick('contato')} 
+                  className="text-text hover:text-accent transition-colors text-left"
+                >
+                  Contato
+                </button>
+                <button 
+                  className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg"
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.open("https://api.whatsapp.com/send?phone=551938733736&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20seguros.", "_blank");
+                  }}
+                >
+                  <MdOutlineWhatsapp size={24} className="text-white" />
+                  Fale Conosco
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -134,4 +218,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

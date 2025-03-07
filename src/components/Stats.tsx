@@ -2,6 +2,7 @@ import { Users, Award, Clock, PhoneCall, Handshake, ArrowRight } from 'lucide-re
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
+
 const CountUpAnimation = ({
   end,
   duration = 2000,
@@ -14,7 +15,7 @@ const CountUpAnimation = ({
   const [count, setCount] = useState(0);
   useEffect(() => {
     if (!shouldAnimate) {
-      setCount(end); // Set the final value immediately if not animating
+      setCount(end);
       return;
     }
     let startTime: number;
@@ -34,6 +35,7 @@ const CountUpAnimation = ({
   }, [end, duration, shouldAnimate]);
   return <>{count}</>;
 };
+
 const StatCard = ({
   icon: Icon,
   number,
@@ -58,9 +60,11 @@ const StatCard = ({
       <p className="text-text">{text}</p>
     </div>;
 };
+
 const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -75,6 +79,7 @@ const Stats = () => {
     }
     return () => observer.disconnect();
   }, []);
+
   const stats = [{
     icon: Users,
     number: "10000+",
@@ -92,6 +97,7 @@ const Stats = () => {
     number: "98+",
     text: "Taxa de Resolução"
   }];
+
   return <section id="sobre" className="py-20 bg-white" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-primary mb-3 animate-fade-in">Nossa Experiência em Números</h2>
@@ -100,7 +106,7 @@ const Stats = () => {
           {stats.map((stat, index) => <StatCard key={index} {...stat} isVisible={isVisible} />)}
         </div>
         <div className="flex justify-center mt-8">
-          <Link to="/sobre">
+          <Link to="/sobre" onClick={() => window.scrollTo(0, 0)}>
             <Button variant="outline" className="group text-lg">
               Saiba mais sobre nós
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -110,4 +116,5 @@ const Stats = () => {
       </div>
     </section>;
 };
+
 export default Stats;

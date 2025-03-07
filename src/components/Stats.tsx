@@ -82,7 +82,7 @@ const Stats = () => {
 
   const stats = [{
     icon: Users,
-    number: "10000+",
+    number: "+5000",
     text: "Clientes Satisfeitos"
   }, {
     icon: Award,
@@ -94,7 +94,7 @@ const Stats = () => {
     text: "Parcerias com as seguradoras"
   }, {
     icon: PhoneCall,
-    number: "98+",
+    number: "98%",
     text: "Taxa de Resolução"
   }];
 
@@ -108,7 +108,7 @@ const Stats = () => {
         <div className="flex justify-center mt-8">
           <Link to="/sobre" onClick={() => window.scrollTo(0, 0)}>
             <Button variant="outline" className="group text-lg">
-              Saiba mais sobre nós
+              Saiba mais
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

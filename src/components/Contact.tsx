@@ -10,7 +10,7 @@ const ContactCard = ({ icon: Icon, title, info, action }: { icon: any, title: st
           window.location.href = 'tel:1938733736';
           break;
         case 'mailto':
-          window.location.href = 'mailto:contato@ihseguros.com.br';
+          window.location.href = 'mailto:ihseguros@ihseguros.com.br';
           break;
         case 'maps':
           window.open('https://maps.google.com/?q=Rua+Dom+Barreto,901+Centro+Sumare+SP', '_blank');
@@ -61,7 +61,7 @@ const Contact = () => {
           <ContactCard
             icon={Mail}
             title="E-mail"
-            info="contato@ihseguros.com.br"
+            info="ihseguros@ihseguros.com.br"
             action="mailto"
           />
           <ContactCard

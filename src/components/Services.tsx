@@ -56,14 +56,14 @@ const Services = () => {
     },
     {
       icon: CreditCard,
-      title: "Seguro Cartão",
-      description: "Proteção para seu cartão de crédito com diversos benefícios.",
+      title: "Cartão de crédito",
+      description: "Cartão de crédito com diversos benefícios.",
       href: "/seguros/cartao"
     },
     {
       icon: Building,
-      title: "Seguro Emprestimo",
-      description: "Proteção para seus emprestimos e financiamentos",
+      title: "Emprestimo e Financiamento",
+      description: "Financiamentos e empréstimos com garantia de veículo ou imóvel",
       href: "/seguros/emprestimo"
     },
     {

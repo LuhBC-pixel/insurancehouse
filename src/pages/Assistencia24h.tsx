@@ -9,7 +9,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const insuranceCompanies = [
   {
-    name: "Aliro Seguros",
+    name: "ALIRO Seguros",
     description: ['Assistência 24 horas', '0800 770 1318', 'Todas as regiões'],
   },
   {
@@ -29,7 +29,7 @@ const insuranceCompanies = [
     description: ['WhatsApp 55 80 0770 1608', '', 'AUTOMÓVEL', 'Região Metropolitana 3003 5390', 'Demais Regiões 0800 4344 340', 'Mercosul 55 11 4133 6636'],
   },
   {
-    name: "LIBERTY SEGUROS",
+    name: "YELUM Seguros",
     description: ['WhatsApp 11 3206 1414', 'AUTO E VIDA 0800 7014 120', 'EMPRESA E RESIDÊNCIA 0800 7025 100'],
   },
   {
@@ -41,16 +41,8 @@ const insuranceCompanies = [
     description: ['WhatsApp 11 3003-9303', '', 'PORTO SEGURO AUTOMÓVEL e RESIDÊNCIA', 'Capital 400476786', 'Grande SP 333 76786', 'Demais Localidades 03003376786', 'Mercosul +55 11 33663189', '', 'PORTOCAP SERVIÇOS', 'Capitais e Regiões Metropolitanas 3003 2274', 'Demais localidades 08007271866', '', 'PORTO ALUGUEL E IMOBILIÁRIA Grande SP 33376786', 'Capitais e Grandes centros 400476786', 'Demais localidades 08007272722', '', 'PORTO EMPRESA', 'Grande SP 11 33663110', 'Capitais e Grandes centros 30046268', 'Demais localidades 08007278118', '', 'PORTO VIDA','Grande SP 11 99663377', 'Demais localidades 08007279393']
   },
   {
-    name: "SOMPO SEGUROS",
-    description: ['TODOS OS RAMOS', 'Grande SP 11 31562990', 'Demais localidades 08007719119'],
-  },
-  {
     name: "SUHAI",
     description: ['WhatsApp 11 3003 0335', 'Telefone 08003278424']
-  },
-  {
-    name: "SUL AMÉRICA",
-    description: ['Whatsapp 11 3004 9723', 'Capital e Região metropolitana 4090 1073', 'Demais localidades 08007771012', 'Mercosul 55 11 4126 9317']
   },
   {
     name: "TÓKIO MARINE",

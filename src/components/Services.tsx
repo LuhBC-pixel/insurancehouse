@@ -50,7 +50,7 @@ const Services = () => {
     },
     {
       icon: Key,
-      title: "Seguro Fiança",
+      title: "Seguro Fiança e Capitalização",
       description: "Garanta a tranquilidade na locação do seu imóvel.",
       href: "/seguros/fianca"
     },

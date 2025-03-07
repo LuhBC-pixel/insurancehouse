@@ -1,6 +1,8 @@
 
-import { Users, Award, Clock, PhoneCall, Handshake } from 'lucide-react';
+import { Users, Award, Clock, PhoneCall, Handshake, ArrowRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
 
 const CountUpAnimation = ({ end, duration = 2000, shouldAnimate }: { end: number, duration?: number, shouldAnimate: boolean }) => {
   const [count, setCount] = useState(0);
@@ -103,10 +105,18 @@ const Stats = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-primary mb-3 animate-fade-in">Nossa Experiência em Números</h2>
         <p className="text-center text-gray-600 mb-12 text-lg animate-fade-in">Conheça nosso histórico de excelência e compromisso</p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {stats.map((stat, index) => (
             <StatCard key={index} {...stat} isVisible={isVisible} />
           ))}
+        </div>
+        <div className="flex justify-center mt-8">
+          <Link to="/sobre">
+            <Button variant="outline" className="group">
+              Saiba mais sobre nós
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

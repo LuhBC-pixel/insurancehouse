@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Analytics } from '@vercel/analytics/react';
 import Index from "./pages/Index";
+import Sobre from "./pages/Sobre";
 import SeguroAuto from "./pages/seguros/SeguroAuto";
 import SeguroResidencial from "./pages/seguros/SeguroResidencial";
 import SeguroVida from "./pages/seguros/SeguroVida";
@@ -33,6 +34,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/sobre" element={<Sobre />} />
           <Route path="/seguros/auto" element={<SeguroAuto />} />
           <Route path="/seguros/residencial" element={<SeguroResidencial />} />
           <Route path="/seguros/vida" element={<SeguroVida />} />

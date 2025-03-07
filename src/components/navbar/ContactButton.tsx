@@ -17,7 +17,7 @@ const ContactButton = ({ isMobile = false, onClick }: ContactButtonProps) => {
       className="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5" 
       onClick={handleClick}
     >
-      <MdOutlineWhatsapp size={24} className="text-white" />
+      <MdOutlineWhatsapp className="text-white text-[24px]" />
       Fale Conosco
     </button>
   );

@@ -31,7 +31,7 @@ const SeguroProdutosDiversos = () => {
       descriptions={data.Descrição}
       icon={<Bike size={48} />}
       buttons={[{
-        icon: <MdOutlineWhatsapp className="mr-2" />,
+        icon: <MdOutlineWhatsapp className="text-[20px]" />,
         label: data.LabelPrimeiroBotão,
         action: () => window.open(data.PrimeiroBotão, '_blank')
       }]}

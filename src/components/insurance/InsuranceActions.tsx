@@ -18,7 +18,7 @@ interface InsuranceActionsProps {
 const InsuranceActions = ({ buttons }: InsuranceActionsProps) => {
   const defaultButtons: ButtonConfig[] = [
     {
-      icon: <MdOutlineWhatsapp className="mr-2" />,
+      icon: <MdOutlineWhatsapp className="text-[20px]" />,
       label: "Entre em contato",
       action: () => window.open('https://api.whatsapp.com/send?phone=551938733736', '_blank'),
       variant: "default",

@@ -1,4 +1,3 @@
-
 import { HelpCircle } from "lucide-react";
 import { useState } from "react";
 import InsurancePage from "@/components/InsurancePage";
@@ -81,7 +80,7 @@ const Assistencia24h = () => {
       icon={<HelpCircle />}
       buttons={[
         {
-          icon: <MdOutlineWhatsapp className="mr-2" />,
+          icon: <MdOutlineWhatsapp className="text-[20px]" />,
           label: "Contato departamento de sinistros/assistências",
           action: () => window.open('https://api.whatsapp.com/send/?phone=5519998805205&text&type=phone_number&app_absent=0', '_blank'),
         }
@@ -135,4 +134,3 @@ const Assistencia24h = () => {
 };
 
 export default Assistencia24h;
-

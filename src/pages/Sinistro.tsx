@@ -38,7 +38,7 @@ const Sinistro = () => {
           variant: "default",
         },
         {
-          icon: <MdOutlineWhatsapp className="mr-2 text-green-500 text-lg" />,
+          icon: <MdOutlineWhatsapp className="text-green-500 text-[20px]" />,
           label: "Contato departamento de sinistros/assistências",
           action: () => window.open('https://api.whatsapp.com/send/?phone=5519998805205&text&type=phone_number&app_absent=0', '_blank'),
           variant: "default",

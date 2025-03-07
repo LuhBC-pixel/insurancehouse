@@ -33,7 +33,7 @@ const SeguroEmpresariais = () => {
       imageSrc="https://images.unsplash.com/photo-1435575653489-b0873ec954e2?q=80&w=1200&h=800&fit=crop"
       buttons={[
         {
-          icon: <MdOutlineWhatsapp className="mr-2" />,
+          icon: <MdOutlineWhatsapp className="text-[20px]" />,
           label: data.LabelPrimeiroBotão,
           action: () => window.open(data.PrimeiroBotão, '_blank')
         },
